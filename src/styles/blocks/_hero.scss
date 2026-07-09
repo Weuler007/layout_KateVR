@@ -1,6 +1,6 @@
 .hero {
-  min-height: calc(100vh - 72px);
-  padding: 56px 0 38px;
+  min-height: calc(100vh - 126px);
+  padding: 42px 0 38px;
   background:
     radial-gradient(
       circle at 62% 44%,
@@ -10,13 +10,18 @@
     linear-gradient(105deg, #171332 0%, #080710 70%);
   overflow: hidden;
 
+  @include desktop {
+    min-height: calc(100vh - 72px);
+    padding: 56px 0 38px;
+  }
+
   &__container {
     @include section-container;
 
     display: grid;
-    min-height: calc(100vh - 166px);
-    grid-template-rows: auto 1fr auto;
-    gap: 36px;
+    min-height: calc(100vh - 206px);
+    grid-template-rows: auto;
+    gap: 0;
 
     @include desktop {
       grid-template-columns: minmax(320px, 450px) minmax(500px, 1fr);
@@ -28,6 +33,10 @@
 
   &__content {
     z-index: 1;
+
+    @media (max-width: #{$desktop-min - 1px}) {
+      padding-top: 0;
+    }
 
     @include desktop {
       transform: translateY(42px);
@@ -51,6 +60,15 @@
     white-space: nowrap;
   }
 
+  &__eyebrow,
+  &__title,
+  &__description,
+  &__image {
+    @media (max-width: #{$desktop-min - 1px}) {
+      display: none;
+    }
+  }
+
   &__description {
     max-width: 340px;
     margin-top: 28px;
@@ -60,15 +78,55 @@
   }
 
   &__price {
-    margin-top: 22px;
-    font-size: 20px;
+    margin-top: 0;
+    font-size: 34px;
     font-weight: 500;
+
+    @include desktop {
+      margin-top: 22px;
+      font-size: 20px;
+    }
   }
 
   &__play {
-    margin-top: 18px;
+    margin-top: 42px;
+
+    @media (max-width: #{$desktop-min - 1px}) {
+      min-width: 334px;
+      min-height: 108px;
+
+      &::before,
+      &::after {
+        left: 54px;
+      }
+
+      &::before {
+        top: 18px;
+      }
+
+      &::after {
+        bottom: 22px;
+      }
+
+      .play__icon {
+        flex-basis: 100px;
+        width: 100px;
+        height: 100px;
+
+        &::before {
+          border-block-width: 18px;
+          border-left-width: 28px;
+        }
+      }
+
+      .play__text {
+        padding-inline: 40px 0;
+        font-size: 30px;
+      }
+    }
 
     @include desktop {
+      margin-top: 18px;
       width: 236px;
       min-width: 236px;
       min-height: 48px;

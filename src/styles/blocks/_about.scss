@@ -95,6 +95,10 @@
   }
 
   &__company {
+    .about__text {
+      max-width: 429px;
+    }
+
     @include desktop {
       grid-template-columns: minmax(300px, 480px) 1fr;
     }

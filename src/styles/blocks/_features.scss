@@ -71,22 +71,50 @@
       transform: rotate(42deg);
     }
 
+    &--social {
+      background:
+        radial-gradient(
+          circle at 30% 30%,
+          transparent 0 6px,
+          $color-accent 6px 8px,
+          transparent 8px
+        ),
+        radial-gradient(
+          circle at 70% 30%,
+          transparent 0 6px,
+          $color-accent 6px 8px,
+          transparent 8px
+        ),
+        radial-gradient(
+          circle at 50% 68%,
+          transparent 0 6px,
+          $color-accent 6px 8px,
+          transparent 8px
+        ),
+        radial-gradient(
+          circle at 18% 70%,
+          transparent 0 4px,
+          $color-accent 4px 6px,
+          transparent 6px
+        ),
+        radial-gradient(
+          circle at 82% 70%,
+          transparent 0 4px,
+          $color-accent 4px 6px,
+          transparent 6px
+        );
+    }
+
     &--social::before {
-      inset: 11px 22px 29px 18px;
-      border-radius: 50%;
-      box-shadow:
-        26px 9px 0 -7px $color-page,
-        16px 30px 0 -7px $color-page,
-        -8px 28px 0 -7px $color-page;
+      inset: 20px 17px 18px;
+      border-width: 2px 2px 0;
+      border-radius: 50% 50% 0 0;
     }
 
     &--social::after {
-      top: 28px;
-      left: 27px;
-      width: 22px;
-      height: 22px;
-      border-width: 0 2px 2px 0;
-      transform: rotate(-35deg);
+      inset: 33px 20px 18px;
+      border-width: 0 2px 2px;
+      border-radius: 0 0 50% 50%;
     }
   }
 
