@@ -1,0 +1,89 @@
+.header {
+  background: rgba(12, 10, 28, 0.82);
+  backdrop-filter: blur(14px);
+
+  &__container {
+    @include section-container;
+
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    min-height: 72px;
+    gap: 24px;
+  }
+
+  &__logo {
+    z-index: 12;
+  }
+
+  &__menu-button {
+    z-index: 12;
+    display: grid;
+    justify-self: end;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 4px;
+    background: transparent;
+    cursor: pointer;
+    place-content: center;
+    gap: 7px;
+
+    @include desktop {
+      display: none;
+    }
+  }
+
+  &__menu-line {
+    width: 20px;
+    height: 2px;
+    background: $color-text;
+    transition: transform 0.3s ease;
+  }
+
+  &__nav {
+    @include desktop {
+      justify-self: end;
+    }
+  }
+
+  &__actions {
+    display: none;
+    align-items: center;
+    gap: 40px;
+
+    @include desktop {
+      display: flex;
+    }
+  }
+
+  &__language {
+    position: relative;
+    padding: 0 14px 0 0;
+    border: 0;
+    background: transparent;
+    color: $color-accent;
+    cursor: pointer;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 0;
+      width: 0;
+      height: 0;
+      border-inline: 4px solid transparent;
+      border-top: 5px solid $color-accent;
+      transform: translateY(-30%);
+    }
+  }
+}
+
+.page--menu-open .header__menu-line:first-child {
+  transform: translateY(4px) rotate(45deg);
+}
+
+.page--menu-open .header__menu-line:last-child {
+  transform: translateY(-5px) rotate(-45deg);
+}

@@ -1,0 +1,34 @@
+.page {
+  min-width: 320px;
+  margin: 0;
+  background:
+    radial-gradient(
+      circle at 18% 5%,
+      rgba(26, 23, 67, 0.95),
+      transparent 28rem
+    ),
+    linear-gradient(180deg, #15112d 0, $color-page 34rem);
+  color: $color-text;
+
+  &--menu-open {
+    overflow: hidden;
+  }
+
+  &__header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  &__section {
+    padding-block: 56px;
+
+    @include tablet {
+      padding-block: 72px;
+    }
+
+    @include desktop {
+      padding-block: 100px;
+    }
+  }
+}

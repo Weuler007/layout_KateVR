@@ -1,0 +1,40 @@
+.play {
+  display: inline-grid;
+  grid-template-columns: 64px 48px auto;
+  align-items: center;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: $color-text;
+  cursor: pointer;
+
+  &__icon {
+    position: relative;
+    display: grid;
+    width: 64px;
+    height: 64px;
+    border: 2px solid $color-accent;
+    border-radius: 50%;
+    place-items: center;
+
+    &::before {
+      content: '';
+      width: 0;
+      height: 0;
+      margin-left: 4px;
+      border-block: 10px solid transparent;
+      border-left: 16px solid $color-accent;
+    }
+  }
+
+  &__line {
+    height: 1px;
+    border-top: 1px dotted $color-accent;
+  }
+
+  &__text {
+    padding-left: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+}

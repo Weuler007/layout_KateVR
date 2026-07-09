@@ -1,0 +1,26 @@
+.tech {
+  background: $color-page;
+
+  &__container {
+    @include section-container;
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 800;
+    text-transform: uppercase;
+
+    span {
+      color: $color-accent;
+      font-weight: 400;
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    max-width: 900px;
+    margin: 44px auto 0;
+  }
+}

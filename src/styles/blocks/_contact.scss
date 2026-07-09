@@ -1,0 +1,59 @@
+.contact {
+  background: $color-page;
+
+  &__container {
+    @include section-container;
+
+    display: grid;
+    gap: 40px;
+
+    @include desktop {
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 72px;
+    }
+  }
+
+  &__eyebrow {
+    color: $color-accent;
+    font-size: 13px;
+  }
+
+  &__title {
+    margin-top: 6px;
+    font-size: 28px;
+    font-weight: 800;
+    text-transform: uppercase;
+
+    span {
+      color: $color-accent;
+      font-weight: 400;
+    }
+  }
+
+  &__text {
+    margin-top: 18px;
+    color: $color-muted;
+    line-height: 1.5;
+  }
+
+  &__address {
+    display: grid;
+    gap: 8px;
+    margin-top: 48px;
+    color: $color-muted;
+    font-style: normal;
+  }
+
+  &__form {
+    display: grid;
+    gap: 18px;
+  }
+
+  &__button {
+    margin-top: 14px;
+
+    @include tablet {
+      justify-self: end;
+    }
+  }
+}

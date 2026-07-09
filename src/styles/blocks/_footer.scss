@@ -1,0 +1,43 @@
+.footer {
+  background: #000;
+  padding-block: 28px;
+
+  &__container {
+    @include section-container;
+
+    display: grid;
+    gap: 24px;
+    align-items: center;
+
+    @include tablet {
+      grid-template-columns: auto 1fr auto;
+    }
+  }
+
+  &__nav,
+  &__socials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    color: $color-text;
+    font-size: 13px;
+  }
+
+  &__nav {
+    @include tablet {
+      justify-content: center;
+    }
+  }
+
+  &__socials {
+    a {
+      display: grid;
+      width: 24px;
+      height: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 50%;
+      place-items: center;
+      font-weight: 800;
+    }
+  }
+}

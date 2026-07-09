@@ -1,3 +1,25 @@
-h1 {
-  @extend %h1;
+html {
+  font-family: 'Mark Pro', Arial, sans-serif;
+  color: $color-text;
+  scroll-behavior: smooth;
+}
+
+body,
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
 }

@@ -6,14 +6,495 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     />
-    <title>Title</title>
+    <title>KAT VR</title>
     <link
       rel="stylesheet"
       href="src/styles/main.scss"
     />
   </head>
-  <body>
-    <h1>Hello Mate Academy</h1>
-    <script src="src/scripts/main.js"></script>
+  <body class="page">
+    <header class="header page__header">
+      <div class="header__container">
+        <a
+          class="logo header__logo"
+          href="#home"
+          aria-label="KAT VR home"
+        >
+          <span class="logo__text">KAT</span>
+          <span class="logo__accent">VR</span>
+        </a>
+
+        <button
+          class="header__menu-button"
+          type="button"
+          aria-label="Open menu"
+          aria-controls="main-menu"
+          aria-expanded="false"
+        >
+          <span class="header__menu-line"></span>
+          <span class="header__menu-line"></span>
+        </button>
+
+        <nav
+          class="nav header__nav"
+          id="main-menu"
+          aria-label="Main navigation"
+        >
+          <a
+            class="nav__link"
+            href="#about"
+          >
+            About
+          </a>
+          <a
+            class="nav__link"
+            href="#tech"
+          >
+            Tech
+          </a>
+          <a
+            class="nav__link"
+            href="#benefits"
+          >
+            Benefits
+          </a>
+          <a
+            class="nav__link"
+            href="#contact"
+          >
+            Contact
+          </a>
+        </nav>
+
+        <div class="header__actions">
+          <button
+            class="header__language"
+            type="button"
+          >
+            En
+          </button>
+          <a
+            class="button header__button"
+            href="#order"
+          >
+            Buy Now
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section
+        class="hero"
+        id="home"
+      >
+        <div class="hero__container">
+          <div class="hero__content">
+            <p class="hero__eyebrow">The new start of</p>
+            <h1 class="hero__title">
+              <span>VR Locomotion</span>
+            </h1>
+            <p class="hero__description">
+              Discover the most comprehensive VR Locomotion system, and unlock
+              infinite motion in any games on any platforms!
+            </p>
+            <p class="hero__price">1200$</p>
+
+            <button
+              class="play hero__play"
+              type="button"
+            >
+              <span class="play__icon"></span>
+              <span class="play__line"></span>
+              <span class="play__text">Play Video</span>
+            </button>
+          </div>
+
+          <img
+            class="hero__image"
+            src="src/images/image.png"
+            alt="KAT VR locomotion sensors"
+          />
+
+          <div class="hero__bottom">
+            <div class="hero__links">
+              <a href="#faq">FAQ</a>
+              <a href="#contact">Help</a>
+            </div>
+
+            <a
+              class="hero__more"
+              href="#gaming"
+            >
+              More
+            </a>
+
+            <div class="hero__pager">
+              <button
+                class="hero__pager-button hero__pager-button--muted"
+                type="button"
+              >
+                Previous
+              </button>
+              <button
+                class="hero__pager-button"
+                type="button"
+              >
+                Next
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="features page__section"
+        id="gaming"
+      >
+        <div class="features__container">
+          <div class="section-heading features__heading">
+            <h2 class="section-heading__title">
+              More than <span>gaming!</span>
+            </h2>
+            <p class="section-heading__text">
+              This also made for people who are interested in...
+            </p>
+          </div>
+
+          <div class="features__grid">
+            <article class="features__item">
+              <div class="features__icon features__icon--education"></div>
+              <h3 class="features__name">Education</h3>
+              <p class="features__text">
+                Create educational simulations, trainings and much more with
+                unlimited virtual space and minimum physical space.
+              </p>
+            </article>
+
+            <article class="features__item">
+              <div class="features__icon features__icon--estate"></div>
+              <h3 class="features__name">Real estate</h3>
+              <p class="features__text">
+                Design architectural projects in a deeply realistic environment
+                allowing visitors to freely walk around, and feel their vibe.
+              </p>
+            </article>
+
+            <article class="features__item">
+              <div class="features__icon features__icon--fitness"></div>
+              <h3 class="features__name">Fitness</h3>
+              <p class="features__text">
+                Combine business with pleasure, and discover countless ways to
+                stay fit while playing your favorite VR games!
+              </p>
+            </article>
+
+            <article class="features__item">
+              <div class="features__icon features__icon--social"></div>
+              <h3 class="features__name">Social interactions</h3>
+              <p class="features__text">
+                Hang out with your friends in the virtual world when you cannot
+                meet space requirements.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="about page__section"
+        id="about"
+      >
+        <div class="about__container">
+          <div class="about__product">
+            <div class="about__media">
+              <img
+                class="about__image"
+                src="src/images/image2.3.png"
+                alt="KAT loco sensor attached to jeans"
+              />
+              <div class="about__slider">
+                <span>Previous</span>
+                <span>Next</span>
+              </div>
+            </div>
+
+            <div class="about__info">
+              <p class="about__count">1/5</p>
+              <h2 class="about__title">About <span>product</span></h2>
+              <p class="about__text">
+                KAT loco is a foot-based VR locomotion system that gives
+                complete physical control over lower-body actions, allowing you
+                to freely walk, run, and carry out just any other movement in
+                virtual reality.
+              </p>
+              <button
+                class="play about__play"
+                type="button"
+              >
+                <span class="play__icon"></span>
+                <span class="play__line"></span>
+                <span class="play__text">Play Video</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="about__company">
+            <div class="about__copy">
+              <p class="about__hello">Hello,</p>
+              <h2 class="about__title">
+                Nice to meet <span>you!</span>
+              </h2>
+              <p class="about__text">
+                KAT VR is an independent company dedicated to the research,
+                development, and sales of VR Locomotion products and solutions.
+                Founded in 2013, we have quickly grown to become one of the
+                world's leading professional suppliers of VR games and
+                simulation equipment.
+              </p>
+            </div>
+            <p class="about__watermark">About us</p>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="tech page__section"
+        id="tech"
+      >
+        <div class="tech__container">
+          <h2 class="tech__title">Tech <span>specs</span></h2>
+          <img
+            class="tech__image"
+            src="src/images/group10.png"
+            alt="KAT VR sensor technical specifications"
+          />
+        </div>
+      </section>
+
+      <section
+        class="benefits page__section"
+        id="benefits"
+      >
+        <div class="benefits__container">
+          <h2 class="benefits__title">Why <span>KAT loco?</span></h2>
+
+          <div class="benefits__grid">
+            <article class="benefits__item">
+              <div class="benefits__icon benefits__icon--compatible"></div>
+              <h3 class="benefits__name">Universally compatible</h3>
+              <p class="benefits__text">
+                KAT Loco offers universal compatibility across all major VR
+                headsets and platforms allowing you to play any VR game.
+              </p>
+            </article>
+
+            <article class="benefits__item benefits__item--active">
+              <div class="benefits__icon benefits__icon--control"></div>
+              <h3 class="benefits__name">VR/PC control panel</h3>
+              <p class="benefits__text">
+                Our software allows for quick access to KAT loco's control
+                panel both from a computer desktop and VR headset.
+              </p>
+            </article>
+
+            <article class="benefits__item">
+              <div class="benefits__icon benefits__icon--wireless"></div>
+              <h3 class="benefits__name">Wireless sensors</h3>
+              <p class="benefits__text">
+                What makes it even more advanced is entirely wireless motion
+                tracking with durable batteries and more.
+              </p>
+            </article>
+          </div>
+
+          <a
+            class="button benefits__button"
+            href="#order"
+          >
+            Buy Now
+          </a>
+        </div>
+      </section>
+
+      <section
+        class="order page__section"
+        id="order"
+      >
+        <div class="order__container">
+          <div class="order__content">
+            <h2 class="order__title">Place order</h2>
+            <p class="order__text">
+              KAT loco full set with three sensors, receiver and access to the
+              control panel.
+            </p>
+            <div class="order__summary">
+              <label
+                class="order__label"
+                for="quantity"
+              >
+                Quantity
+              </label>
+              <select
+                class="order__select"
+                id="quantity"
+              >
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+              </select>
+              <p class="order__price">1200$</p>
+            </div>
+          </div>
+
+          <form class="order__form">
+            <label class="field">
+              <span class="field__label">First Name*</span>
+              <input
+                class="field__control"
+                type="text"
+                required
+              />
+            </label>
+            <label class="field">
+              <span class="field__label">Last Name*</span>
+              <input
+                class="field__control"
+                type="text"
+                required
+              />
+            </label>
+            <label class="field">
+              <span class="field__label">Email*</span>
+              <input
+                class="field__control"
+                type="email"
+                required
+              />
+            </label>
+            <label class="field">
+              <span class="field__label">Phone Number*</span>
+              <input
+                class="field__control"
+                type="tel"
+                required
+              />
+            </label>
+            <button
+              class="button order__button"
+              type="submit"
+            >
+              Purchase
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <section
+        class="contact page__section"
+        id="contact"
+      >
+        <div class="contact__container">
+          <div class="contact__info">
+            <p class="contact__eyebrow">Have any questions?</p>
+            <h2 class="contact__title">Get in <span>touch</span></h2>
+            <p class="contact__text">
+              Our manager will reply you within 15 minutes.
+            </p>
+            <address class="contact__address">
+              <a href="tel:+86057186105373">+86-0571-86105373</a>
+              <a href="mailto:global@katvr.com">global@katvr.com</a>
+              <a href="mailto:overseas@katvr.com">overseas@katvr.com</a>
+            </address>
+          </div>
+
+          <form class="contact__form">
+            <label class="field contact__field">
+              <span class="field__label">Name*</span>
+              <input
+                class="field__control"
+                type="text"
+                required
+              />
+            </label>
+            <label class="field contact__field">
+              <span class="field__label">Email*</span>
+              <input
+                class="field__control"
+                type="email"
+                required
+              />
+            </label>
+            <label class="field contact__field">
+              <span class="field__label">Phone*</span>
+              <input
+                class="field__control"
+                type="tel"
+                required
+              />
+            </label>
+            <label class="field contact__field">
+              <span class="field__label">Message</span>
+              <textarea class="field__control field__control--area"></textarea>
+            </label>
+            <button
+              class="button contact__button"
+              type="submit"
+            >
+              Contact Us
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__container">
+        <a
+          class="logo footer__logo"
+          href="#home"
+          aria-label="KAT VR home"
+        >
+          <span class="logo__text">KAT</span>
+          <span class="logo__accent">VR</span>
+        </a>
+
+        <nav
+          class="footer__nav"
+          aria-label="Footer navigation"
+        >
+          <a href="#about">About</a>
+          <a href="#tech">Tech</a>
+          <a href="#benefits">Benefits</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="footer__socials">
+          <a
+            href="https://www.facebook.com/"
+            aria-label="Facebook"
+          >
+            f
+          </a>
+          <a
+            href="https://twitter.com/"
+            aria-label="Twitter"
+          >
+            t
+          </a>
+          <a
+            href="https://www.youtube.com/"
+            aria-label="YouTube"
+          >
+            y
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script
+      type="module"
+      src="src/scripts/main.js"
+    ></script>
   </body>
 </html>

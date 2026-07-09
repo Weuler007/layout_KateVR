@@ -1,0 +1,21 @@
+.section-heading {
+  text-align: center;
+
+  &__title {
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1.2;
+    text-transform: uppercase;
+
+    span {
+      color: $color-accent;
+      font-weight: 400;
+    }
+  }
+
+  &__text {
+    margin-top: 10px;
+    color: $color-accent;
+    font-size: 14px;
+  }
+}

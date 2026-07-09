@@ -1,6 +1,29 @@
 @mixin hover($_property, $_toValue) {
   transition: #{$_property} 0.3s;
+
   &:hover {
     #{$_property}: $_toValue;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: $tablet-min) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $desktop-min) {
+    @content;
+  }
+}
+
+// Mantem o conteudo alinhado ao frame de 1280px do Figma.
+@mixin section-container {
+  width: min(100% - 32px, $content-width);
+  margin-inline: auto;
+
+  @include tablet {
+    width: min(100% - 64px, $content-width);
   }
 }

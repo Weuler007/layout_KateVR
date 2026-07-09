@@ -1,0 +1,113 @@
+.benefits {
+  background:
+    linear-gradient(90deg, rgba(20, 16, 46, 0.92), rgba(5, 4, 10, 0.96)),
+    $color-page;
+
+  &__container {
+    @include section-container;
+
+    text-align: center;
+  }
+
+  &__title {
+    font-size: 28px;
+    font-weight: 800;
+    text-transform: uppercase;
+
+    span {
+      color: $color-accent;
+      font-weight: 400;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    margin-top: 48px;
+
+    @include tablet {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__item {
+    min-height: 246px;
+    box-sizing: border-box;
+    padding: 32px 24px;
+    border: 1px solid transparent;
+
+    &--active {
+      border-color: $color-line;
+    }
+  }
+
+  &__icon {
+    position: relative;
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 24px;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      border: 2px solid $color-accent;
+    }
+
+    &--compatible::before {
+      inset: 18px;
+    }
+
+    &--compatible::after {
+      inset: 8px;
+      border-style: dotted;
+    }
+
+    &--control::before {
+      inset: 10px 14px 18px;
+      border-bottom-width: 8px;
+    }
+
+    &--control::after {
+      left: 26px;
+      bottom: 4px;
+      width: 18px;
+      height: 14px;
+      border-top: 0;
+    }
+
+    &--wireless::before,
+    &--wireless::after {
+      top: 50%;
+      left: 50%;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &--wireless::before {
+      width: 52px;
+      height: 52px;
+    }
+
+    &--wireless::after {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  &__name {
+    font-size: 13px;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    margin-top: 14px;
+    color: $color-muted;
+    font-size: 14px;
+    line-height: 1.45;
+  }
+
+  &__button {
+    margin-top: 44px;
+  }
+}

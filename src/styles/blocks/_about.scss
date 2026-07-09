@@ -1,0 +1,91 @@
+.about {
+  background: linear-gradient(90deg, $color-panel 0, $color-page 100%);
+
+  &__container {
+    @include section-container;
+
+    display: grid;
+    gap: 80px;
+  }
+
+  &__product,
+  &__company {
+    display: grid;
+    gap: 32px;
+
+    @include desktop {
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+    }
+  }
+
+  &__media {
+    position: relative;
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    max-height: 340px;
+    object-fit: cover;
+  }
+
+  &__slider {
+    display: flex;
+    gap: 28px;
+    margin-top: 12px;
+    font-size: 13px;
+  }
+
+  &__count,
+  &__hello {
+    color: $color-accent;
+    font-size: 13px;
+  }
+
+  &__title {
+    margin-top: 8px;
+    font-size: 28px;
+    font-weight: 800;
+    text-transform: uppercase;
+
+    span {
+      color: $color-accent;
+      font-weight: 400;
+    }
+  }
+
+  &__text {
+    max-width: 460px;
+    margin-top: 24px;
+    color: $color-muted;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  &__play {
+    margin-top: 28px;
+  }
+
+  &__company {
+    @include desktop {
+      grid-template-columns: minmax(300px, 480px) 1fr;
+    }
+  }
+
+  &__watermark {
+    display: none;
+
+    @include desktop {
+      display: block;
+      color: transparent;
+      font-size: 72px;
+      font-weight: 800;
+      line-height: 0.9;
+      text-transform: uppercase;
+      -webkit-text-stroke: 1px rgba(5, 194, 223, 0.35);
+      writing-mode: vertical-rl;
+      justify-self: center;
+    }
+  }
+}
