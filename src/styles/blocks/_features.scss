@@ -38,7 +38,7 @@
     }
 
     &--education::before {
-      inset: 14px 8px 24px;
+      inset: 12px 8px 26px;
       transform: skewY(24deg);
     }
 
@@ -48,23 +48,22 @@
     }
 
     &--estate::before {
-      inset: 10px 14px 8px;
+      inset: 8px 25px 6px 8px;
     }
 
     &--estate::after {
-      inset: 0 22px auto;
-      height: 54px;
-      border-block: 0;
+      inset: 18px 8px 6px 31px;
+      box-shadow: -19px 10px 0 -6px $color-page;
     }
 
     &--fitness::before {
-      inset: 6px 18px 18px;
+      inset: 6px 20px 20px 8px;
       border-radius: 50%;
     }
 
     &--fitness::after {
-      right: 4px;
-      bottom: 8px;
+      right: 7px;
+      bottom: 9px;
       width: 28px;
       height: 2px;
       border: 0;
@@ -73,16 +72,21 @@
     }
 
     &--social::before {
-      inset: 8px;
+      inset: 11px 22px 29px 18px;
       border-radius: 50%;
+      box-shadow:
+        26px 9px 0 -7px $color-page,
+        16px 30px 0 -7px $color-page,
+        -8px 28px 0 -7px $color-page;
     }
 
     &--social::after {
-      inset: 20px;
-      border-radius: 50%;
-      box-shadow:
-        -24px 0 0 -10px $color-page,
-        24px 0 0 -10px $color-page;
+      top: 28px;
+      left: 27px;
+      width: 22px;
+      height: 22px;
+      border-width: 0 2px 2px 0;
+      transform: rotate(-35deg);
     }
   }
 

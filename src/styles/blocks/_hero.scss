@@ -28,6 +28,10 @@
 
   &__content {
     z-index: 1;
+
+    @include desktop {
+      transform: translateY(42px);
+    }
   }
 
   &__eyebrow,
@@ -63,6 +67,26 @@
 
   &__play {
     margin-top: 18px;
+
+    @include desktop {
+      width: 236px;
+      min-width: 236px;
+      min-height: 48px;
+
+      &::before {
+        top: 8px;
+      }
+
+      &::after {
+        bottom: 8px;
+      }
+
+      .play__icon {
+        flex-basis: 48px;
+        width: 48px;
+        height: 48px;
+      }
+    }
   }
 
   &__image {
@@ -111,6 +135,13 @@
 
   &__pager {
     justify-self: end;
+
+    @include desktop {
+      justify-content: space-between;
+      width: 210px;
+      margin-right: 34px;
+      gap: 0;
+    }
   }
 
   &__pager-button {

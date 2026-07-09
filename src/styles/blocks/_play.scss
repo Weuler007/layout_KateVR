@@ -1,18 +1,45 @@
 .play {
-  display: inline-grid;
-  grid-template-columns: 64px 48px auto;
+  position: relative;
+  display: inline-flex;
   align-items: center;
+  min-width: 190px;
+  min-height: 66px;
   padding: 0;
   border: 0;
   background: transparent;
   color: $color-text;
   cursor: pointer;
 
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    left: 28px;
+    height: 2px;
+    background: $color-accent;
+  }
+
+  &::before {
+    top: 13px;
+  }
+
+  &::after {
+    bottom: 10px;
+    background: repeating-linear-gradient(
+      90deg,
+      $color-accent 0 2px,
+      transparent 2px 8px
+    );
+  }
+
   &__icon {
     position: relative;
     display: grid;
-    width: 64px;
-    height: 64px;
+    z-index: 1;
+    flex: 0 0 58px;
+    width: 58px;
+    height: 58px;
     border: 2px solid $color-accent;
     border-radius: 50%;
     place-items: center;
@@ -28,13 +55,15 @@
   }
 
   &__line {
-    height: 1px;
-    border-top: 1px dotted $color-accent;
+    display: none;
   }
 
   &__text {
-    padding-left: 14px;
+    z-index: 1;
+    flex: 1;
+    padding-inline: 24px 0;
     font-weight: 500;
+    text-align: center;
     white-space: nowrap;
   }
 }
