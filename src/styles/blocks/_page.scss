@@ -11,7 +11,8 @@
     linear-gradient(180deg, #15112d 0, $color-page 34rem);
   color: $color-text;
 
-  &--menu-open {
+  &--menu-open,
+  &--modal-open {
     overflow: hidden;
   }
 

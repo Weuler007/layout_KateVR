@@ -1,0 +1,124 @@
+.modal {
+  position: fixed;
+  z-index: 20;
+  inset: 0;
+  display: grid;
+  padding: 80px 16px;
+  background:
+    linear-gradient(rgba(5, 4, 10, 0.82), rgba(5, 4, 10, 0.92)),
+    url('../images/image.png') right 8% center / min(32vw, 360px) auto no-repeat;
+  opacity: 0;
+  overflow-y: auto;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  place-items: center;
+
+  &--open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  &__panel {
+    position: relative;
+    width: min(100%, 700px);
+    box-sizing: border-box;
+    padding: 36px;
+    border: 1px solid $color-line;
+    background: rgba(21, 17, 44, 0.98);
+  }
+
+  &__close {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    width: 22px;
+    height: 22px;
+    border: 1px solid $color-accent;
+    background: transparent;
+    cursor: pointer;
+    transition:
+      border-color 0.3s ease,
+      transform 0.3s ease;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 12px;
+      height: 1px;
+      background: $color-accent;
+    }
+
+    &::before {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    &::after {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+
+    &:hover {
+      border-color: $color-text;
+      transform: scale(1.1);
+    }
+  }
+
+  &__title {
+    max-width: 520px;
+    font-size: clamp(24px, 4vw, 34px);
+    font-weight: 800;
+    line-height: 1.15;
+    text-transform: uppercase;
+
+    span {
+      color: $color-accent;
+      font-weight: 400;
+    }
+  }
+
+  &__item {
+    margin-top: 18px;
+    border: 1px solid $color-line;
+    color: $color-muted;
+
+    summary {
+      padding: 16px;
+      color: $color-accent;
+      cursor: pointer;
+    }
+
+    p {
+      padding: 0 16px 16px;
+      line-height: 1.55;
+    }
+  }
+
+  &__text {
+    margin-top: 22px;
+    color: $color-muted;
+    line-height: 1.55;
+  }
+
+  &__actions {
+    display: grid;
+    gap: 12px;
+    margin-top: 24px;
+
+    a {
+      width: fit-content;
+      padding-bottom: 3px;
+      border-bottom: 1px solid $color-accent;
+      color: $color-accent;
+      transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+
+      &:hover {
+        color: $color-text;
+        transform: translateX(4px);
+      }
+    }
+  }
+}
