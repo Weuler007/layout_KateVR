@@ -69,7 +69,10 @@ document.addEventListener('keydown', event => {
 });
 
 const setOrderStage = stageName => {
-  const stageIndex = ['details', 'pay', 'complete'].indexOf(stageName);
+  const stepByStage = {
+    details: 0,
+    complete: 2,
+  };
 
   orderStages.forEach(stage => {
     stage.classList.toggle(
@@ -79,7 +82,7 @@ const setOrderStage = stageName => {
   });
 
   orderSteps.forEach((step, index) => {
-    step.classList.toggle('order__step--active', index === stageIndex);
+    step.classList.toggle('order__step--active', index === stepByStage[stageName]);
   });
 };
 
@@ -88,13 +91,6 @@ orderForms.forEach(form => {
     event.preventDefault();
 
     if (!form.reportValidity()) {
-      return;
-    }
-
-    if (form.dataset.orderForm === 'details') {
-      setOrderStage('pay');
-      document.querySelector('#order').scrollIntoView({ behavior: 'smooth' });
-
       return;
     }
 

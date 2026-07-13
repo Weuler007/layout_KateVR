@@ -93,7 +93,8 @@
     margin-top: 42px;
 
     @media (max-width: #{$desktop-min - 1px}) {
-      min-width: 334px;
+      width: min(100%, 334px);
+      min-width: 0;
       min-height: 93px;
     }
 

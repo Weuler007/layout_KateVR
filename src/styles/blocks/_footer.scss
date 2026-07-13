@@ -18,15 +18,20 @@
   &__socials {
     display: flex;
     flex-wrap: wrap;
-    gap: 24px;
     color: $color-text;
     font-size: 13px;
   }
 
   &__nav {
+    gap: 24px;
+
     @include tablet {
       justify-content: center;
     }
+  }
+
+  &__socials {
+    gap: 16px;
   }
 
   &__link {
@@ -42,8 +47,8 @@
 
   &__social {
     display: grid;
-    width: 28px;
-    height: 28px;
+    width: 14px;
+    height: 14px;
     place-items: center;
     cursor: pointer;
     transition:
@@ -53,8 +58,8 @@
 
     img {
       display: block;
-      max-width: 18px;
-      max-height: 18px;
+      max-width: 14px;
+      max-height: 14px;
       object-fit: contain;
     }
 

@@ -20,11 +20,25 @@
 
   &__panel {
     position: relative;
-    width: min(100%, 700px);
+    width: min(100%, 880px);
     box-sizing: border-box;
-    padding: 36px;
+    padding: 56px 80px 44px;
     border: 1px solid $color-line;
     background: rgba(21, 17, 44, 0.98);
+
+    @media (max-width: 760px) {
+      padding: 44px 24px 32px;
+    }
+
+    &--help {
+      min-height: 550px;
+      padding: 60px 88px 74px;
+
+      @media (max-width: 760px) {
+        min-height: auto;
+        padding: 56px 24px 36px;
+      }
+    }
   }
 
   &__close {
@@ -33,7 +47,7 @@
     right: 18px;
     width: 22px;
     height: 22px;
-    border: 1px solid $color-accent;
+    border: 0;
     background: transparent;
     cursor: pointer;
     transition:
@@ -79,19 +93,52 @@
   }
 
   &__item {
+    max-width: 700px;
     margin-top: 18px;
     border: 1px solid $color-line;
     color: $color-muted;
 
     summary {
-      padding: 16px;
+      padding: 16px 24px;
       color: $color-accent;
       cursor: pointer;
     }
 
     p {
-      padding: 0 16px 16px;
+      padding: 0 24px 16px;
       line-height: 1.55;
+    }
+  }
+
+  &__updated {
+    color: rgba(146, 146, 146, 0.56);
+    font-size: 13px;
+  }
+
+  &__more {
+    display: grid;
+    margin: 44px auto 0;
+    border: 0;
+    background: transparent;
+    color: $color-accent;
+    cursor: pointer;
+    font: inherit;
+    transition:
+      color 0.3s ease,
+      transform 0.3s ease;
+
+    &::after {
+      content: '';
+      width: 0;
+      height: 0;
+      margin: 8px auto 0;
+      border-inline: 4px solid transparent;
+      border-top: 5px solid currentColor;
+    }
+
+    &:hover {
+      color: $color-text;
+      transform: translateY(-2px);
     }
   }
 
@@ -99,6 +146,17 @@
     margin-top: 22px;
     color: $color-muted;
     line-height: 1.55;
+
+    a {
+      color: $color-accent;
+    }
+
+    &--help {
+      max-width: 702px;
+      margin-top: 28px;
+      font-size: 16px;
+      line-height: 1.5;
+    }
   }
 
   &__actions {
@@ -118,6 +176,21 @@
       &:hover {
         color: $color-text;
         transform: translateX(4px);
+      }
+    }
+
+    span {
+      color: $color-muted;
+    }
+
+    &--help {
+      grid-template-columns: 203px 1fr;
+      gap: 14px 62px;
+      max-width: 702px;
+      margin-top: 24px;
+
+      @media (max-width: 540px) {
+        grid-template-columns: 1fr;
       }
     }
   }
