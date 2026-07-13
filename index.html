@@ -6,7 +6,12 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     />
-    <title>KAT VR</title>
+    <title>KatVR</title>
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="src/images/favicon.svg"
+    />
     <link
       rel="stylesheet"
       href="src/styles/main.scss"
@@ -17,7 +22,7 @@
       <div class="header__container">
         <a
           class="logo header__logo"
-          href="#home"
+          href="#"
           aria-label="KAT VR home"
         >
           <span class="logo__text">KAT</span>
@@ -103,6 +108,7 @@
             <button
               class="play hero__play"
               type="button"
+              data-video-url="https://www.youtube.com/@KATVRGLOBAL"
             >
               <span class="play__icon"></span>
               <span class="play__line"></span>
@@ -118,7 +124,7 @@
 
           <div class="hero__bottom">
             <div class="hero__links">
-              <a href="#faq">FAQ</a>
+              <a href="#contact">FAQ</a>
               <a href="#contact">Help</a>
             </div>
 
@@ -133,12 +139,14 @@
               <button
                 class="hero__pager-button hero__pager-button--muted"
                 type="button"
+                aria-label="Show previous slide"
               >
                 Previous
               </button>
               <button
                 class="hero__pager-button"
                 type="button"
+                aria-label="Show next slide"
               >
                 Next
               </button>
@@ -166,8 +174,8 @@
               <div class="features__icon features__icon--education"></div>
               <h3 class="features__name">Education</h3>
               <p class="features__text">
-                Create educational simulations, trainings and much more with
-                unlimited virtual space and minimum physical space.
+                Create aducational simulations, trainings and much more with
+                unlimited virtual space and minimum physical space
               </p>
             </article>
 
@@ -175,7 +183,7 @@
               <div class="features__icon features__icon--estate"></div>
               <h3 class="features__name">Real estate</h3>
               <p class="features__text">
-                Design architectural projects in a deeply realistic environment
+                Desighn architectural projects in a deeply realistic environment
                 allowing visitors to freely walk around, and feel their vibe
               </p>
             </article>
@@ -193,8 +201,8 @@
               <div class="features__icon features__icon--social"></div>
               <h3 class="features__name">Social interactions</h3>
               <p class="features__text">
-                Hang out with your friends in the virtual world when you cannot
-                meet space requirements.
+                Hang out with your friends in the virtual world when you can't
+                meet space requirements
               </p>
             </article>
           </div>
@@ -221,7 +229,9 @@
 
             <div class="about__info">
               <p class="about__count">1/5</p>
-              <h2 class="about__title">About <span>product</span></h2>
+              <h2 class="about__title">
+                About <span class="about__title-accent">product</span>
+              </h2>
               <p class="about__text">
                 KAT loco is a foot-based VR locomotion system that gives
                 complete physical control over lower-body actions, allowing you
@@ -231,6 +241,7 @@
               <button
                 class="play about__play"
                 type="button"
+                data-video-url="https://www.youtube.com/@KATVRGLOBAL"
               >
                 <span class="play__icon"></span>
                 <span class="play__line"></span>
@@ -243,14 +254,14 @@
             <div class="about__copy">
               <p class="about__hello">Hello,</p>
               <h2 class="about__title">
-                Nice to meet <span>you!</span>
+                Nice to meet <span class="about__title-accent">you!</span>
               </h2>
               <p class="about__text">
                 KAT VR is an independent company dedicated to the research,
                 development, and sales of VR Locomotion products and solutions.
                 Founded in 2013, we have quickly grown to become one of the
-                world’s leading professional suppliers of VR games’ &
-                simulations’ equipment
+                world's leading professional suppliers of VR games' &
+                simulations' equipment
               </p>
             </div>
             <p class="about__watermark">About us</p>
@@ -285,7 +296,8 @@
               <h3 class="benefits__name">Universally compatible</h3>
               <p class="benefits__text">
                 KAT Loco offers universal compatibility across all major VR
-                headsets and platforms allowing you to play any VR game.
+                headsets and platforms allowing you to play any VR game with
+                support for Free Locomotion
               </p>
             </article>
 
@@ -293,8 +305,9 @@
               <div class="benefits__icon benefits__icon--control"></div>
               <h3 class="benefits__name">VR/PC control panel</h3>
               <p class="benefits__text">
-                Our software allows for quick access to KAT loco's control
-                panel both from a computer desktop and VR headset.
+                Our Multifunctional Software allows for quick access to KAT
+                Loco's control panel both from a computer desktop, and directly
+                from your VR headset.
               </p>
             </article>
 
@@ -302,8 +315,9 @@
               <div class="benefits__icon benefits__icon--wireless"></div>
               <h3 class="benefits__name">Wireless sensors</h3>
               <p class="benefits__text">
-                What makes it even more advanced is entirely wireless motion
-                tracking with durable batteries and more.
+                What makes it even more advanced, KAT Loco is entirely
+                wireless, and comes with a complete system of algorithms, super
+                durable batteries and more!
               </p>
             </article>
           </div>
@@ -353,6 +367,9 @@
               <input
                 class="field__control"
                 type="text"
+                name="first-name"
+                placeholder="John"
+                autocomplete="given-name"
                 required
               />
             </label>
@@ -361,6 +378,9 @@
               <input
                 class="field__control"
                 type="text"
+                name="last-name"
+                placeholder="Smith"
+                autocomplete="family-name"
                 required
               />
             </label>
@@ -369,6 +389,9 @@
               <input
                 class="field__control"
                 type="email"
+                name="email"
+                placeholder="john.smith@example.com"
+                autocomplete="email"
                 required
               />
             </label>
@@ -377,6 +400,12 @@
               <input
                 class="field__control"
                 type="tel"
+                name="phone"
+                placeholder="+1 234 567 8900"
+                autocomplete="tel"
+                inputmode="tel"
+                pattern="^\+?[0-9\s\-()]{7,20}$"
+                title="Use only numbers, spaces, brackets, hyphens and an optional plus sign."
                 required
               />
             </label>
@@ -399,7 +428,7 @@
             <p class="contact__eyebrow">Have any questions?</p>
             <h2 class="contact__title">Get in <span>touch</span></h2>
             <p class="contact__text">
-              Our manager will reply you within 15 minutes.
+              Our manager will reply you within 15 minutes
             </p>
             <address class="contact__address">
               <a href="tel:+86057186105373">+86-0571-86105373</a>
@@ -414,6 +443,9 @@
               <input
                 class="field__control"
                 type="text"
+                name="name"
+                placeholder="John Smith"
+                autocomplete="name"
                 required
               />
             </label>
@@ -422,6 +454,9 @@
               <input
                 class="field__control"
                 type="email"
+                name="contact-email"
+                placeholder="john.smith@example.com"
+                autocomplete="email"
                 required
               />
             </label>
@@ -430,12 +465,22 @@
               <input
                 class="field__control"
                 type="tel"
+                name="contact-phone"
+                placeholder="+1 234 567 8900"
+                autocomplete="tel"
+                inputmode="tel"
+                pattern="^\+?[0-9\s\-()]{7,20}$"
+                title="Use only numbers, spaces, brackets, hyphens and an optional plus sign."
                 required
               />
             </label>
             <label class="field contact__field">
               <span class="field__label">Message</span>
-              <textarea class="field__control field__control--area"></textarea>
+              <textarea
+                class="field__control field__control--area"
+                name="message"
+                placeholder="Your message"
+              ></textarea>
             </label>
             <button
               class="button contact__button"
@@ -452,7 +497,7 @@
       <div class="footer__container">
         <a
           class="logo footer__logo"
-          href="#home"
+          href="#"
           aria-label="KAT VR home"
         >
           <span class="logo__text">KAT</span>
@@ -463,32 +508,67 @@
           class="footer__nav"
           aria-label="Footer navigation"
         >
-          <a href="#about">About</a>
-          <a href="#tech">Tech</a>
-          <a href="#benefits">Benefits</a>
-          <a href="#contact">Contact</a>
+          <a
+            class="footer__link"
+            href="#about"
+          >
+            About
+          </a>
+          <a
+            class="footer__link"
+            href="#tech"
+          >
+            Tech
+          </a>
+          <a
+            class="footer__link"
+            href="#benefits"
+          >
+            Benefits
+          </a>
+          <a
+            class="footer__link"
+            href="#contact"
+          >
+            Contact
+          </a>
         </nav>
 
         <div class="footer__socials">
           <a
-            href="https://www.facebook.com/"
+            class="footer__social"
+            href="https://www.facebook.com/KATVRGLOBAL"
             aria-label="Facebook"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             f
           </a>
           <a
-            href="https://twitter.com/"
+            class="footer__social"
+            href="https://twitter.com/KATVRGLOBAL"
             aria-label="Twitter"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             t
           </a>
           <a
-            href="https://www.youtube.com/"
+            class="footer__social"
+            href="https://www.youtube.com/@KATVRGLOBAL"
             aria-label="YouTube"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             y
           </a>
         </div>
+
+        <a
+          class="footer__top"
+          href="#"
+          aria-label="Back to top"
+        ></a>
       </div>
     </footer>
 

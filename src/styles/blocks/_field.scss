@@ -16,9 +16,27 @@
     background: transparent;
     color: $color-text;
     outline: none;
+    transition:
+      border-color 0.3s ease,
+      box-shadow 0.3s ease;
 
     &:focus {
       border-color: $color-accent;
+      box-shadow: 0 1px 0 $color-accent;
+    }
+
+    &::placeholder {
+      color: rgba(146, 146, 146, 0.64);
+    }
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus {
+      border-bottom-color: $color-accent;
+      -webkit-text-fill-color: $color-text;
+      box-shadow: 0 0 0 1000px $color-page inset;
+      caret-color: $color-text;
+      transition: background-color 5000s ease-in-out 0s;
     }
 
     &--area {

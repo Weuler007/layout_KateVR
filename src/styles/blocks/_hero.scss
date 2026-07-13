@@ -7,6 +7,7 @@
       rgba(25, 20, 61, 0.72),
       transparent 24rem
     ),
+    url('../images/Rectangle.png') center / cover no-repeat,
     linear-gradient(105deg, #171332 0%, #080710 70%);
   overflow: hidden;
 
@@ -93,64 +94,27 @@
 
     @media (max-width: #{$desktop-min - 1px}) {
       min-width: 334px;
-      min-height: 108px;
-
-      &::before,
-      &::after {
-        left: 54px;
-      }
-
-      &::before {
-        top: 18px;
-      }
-
-      &::after {
-        bottom: 22px;
-      }
-
-      .play__icon {
-        flex-basis: 100px;
-        width: 100px;
-        height: 100px;
-
-        &::before {
-          border-block-width: 18px;
-          border-left-width: 28px;
-        }
-      }
-
-      .play__text {
-        padding-inline: 40px 0;
-        font-size: 30px;
-      }
+      min-height: 93px;
     }
 
     @include desktop {
+      margin-left: 97px;
       margin-top: 18px;
-      width: 236px;
-      min-width: 236px;
-      min-height: 48px;
-
-      &::before {
-        top: 8px;
-      }
-
-      &::after {
-        bottom: 8px;
-      }
-
-      .play__icon {
-        flex-basis: 48px;
-        width: 48px;
-        height: 48px;
-      }
+      min-width: 248px;
+      min-height: 69px;
     }
   }
 
   &__image {
     place-self: center;
     width: min(100%, 640px);
+    cursor: pointer;
     filter: drop-shadow(0 36px 24px rgba(0, 0, 0, 0.5));
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.03);
+    }
 
     @include desktop {
       width: min(100%, 700px);
@@ -175,10 +139,29 @@
     font-weight: 500;
   }
 
+  &__links a {
+    transition:
+      color 0.3s ease,
+      transform 0.3s ease;
+
+    &:hover {
+      color: $color-accent;
+      transform: translateY(-2px);
+    }
+  }
+
   &__more {
     position: relative;
     color: $color-accent;
     font-weight: 500;
+    transition:
+      color 0.3s ease,
+      transform 0.3s ease;
+
+    &:hover {
+      color: $color-text;
+      transform: translateY(-2px);
+    }
 
     &::after {
       content: '';
@@ -209,6 +192,14 @@
     background: transparent;
     color: $color-text;
     cursor: pointer;
+    transition:
+      color 0.3s ease,
+      transform 0.3s ease;
+
+    &:hover {
+      color: $color-accent;
+      transform: translateY(-2px);
+    }
 
     &::after {
       content: '';

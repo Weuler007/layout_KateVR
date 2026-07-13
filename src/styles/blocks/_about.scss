@@ -1,5 +1,7 @@
 .about {
-  background: linear-gradient(90deg, $color-panel 0, $color-page 100%);
+  background:
+    url('../images/rectangle4.1.png') center / cover no-repeat,
+    linear-gradient(90deg, $color-panel 0, $color-page 100%);
 
   &__container {
     @include section-container;
@@ -27,7 +29,16 @@
     display: block;
     width: 100%;
     max-height: 340px;
+    cursor: pointer;
     object-fit: cover;
+    transition:
+      filter 0.3s ease,
+      transform 0.3s ease;
+
+    &:hover {
+      filter: saturate(1.15);
+      transform: scale(1.02);
+    }
   }
 
   &__slider {
@@ -62,6 +73,18 @@
     & > :first-child {
       color: $color-muted;
     }
+
+    span {
+      cursor: pointer;
+      transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+
+      &:hover {
+        color: $color-accent;
+        transform: translateY(-2px);
+      }
+    }
   }
 
   &__count,
@@ -76,7 +99,7 @@
     font-weight: 800;
     text-transform: uppercase;
 
-    span {
+    &-accent {
       color: $color-accent;
       font-weight: 400;
     }
@@ -109,13 +132,11 @@
 
     @include desktop {
       display: block;
+      width: 498px;
+      height: 347px;
+      overflow: hidden;
+      background: url('../images/efeito.png') center / contain no-repeat;
       color: transparent;
-      font-size: 72px;
-      font-weight: 800;
-      line-height: 0.9;
-      text-transform: uppercase;
-      -webkit-text-stroke: 1px rgba(5, 194, 223, 0.35);
-      writing-mode: vertical-rl;
       justify-self: center;
     }
   }

@@ -1,12 +1,14 @@
 .order {
   background:
     linear-gradient(90deg, rgba(19, 15, 50, 0.95), rgba(5, 4, 10, 0.94)),
-    url('../images/image.png') left 12% center / min(46vw, 560px) auto no-repeat;
+    url('../images/image.png') left 12% center / min(46vw, 560px) auto no-repeat,
+    url('../images/Rectangle.png') center / cover no-repeat;
 
   @media (max-width: 760px) {
     background:
       linear-gradient(rgba(19, 15, 50, 0.95), rgba(5, 4, 10, 0.96)),
-      url('../images/image.png') center top 24px / 88vw auto no-repeat;
+      url('../images/image.png') center top 24px / 88vw auto no-repeat,
+      url('../images/Rectangle.png') center / cover no-repeat;
   }
 
   &__container {
@@ -71,7 +73,18 @@
     border-radius: 2px;
     background: $color-field;
     color: $color-text;
+    cursor: pointer;
     text-align: center;
+    transition:
+      background 0.3s ease,
+      box-shadow 0.3s ease;
+
+    &:hover,
+    &:focus {
+      background: #3a3654;
+      box-shadow: 0 0 0 1px $color-accent;
+      outline: none;
+    }
   }
 
   &__price {

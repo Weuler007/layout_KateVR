@@ -33,6 +33,14 @@
     cursor: pointer;
     place-content: center;
     gap: 7px;
+    transition:
+      border-color 0.3s ease,
+      transform 0.3s ease;
+
+    &:hover {
+      border-color: $color-accent;
+      transform: scale(1.04);
+    }
 
     @include desktop {
       display: none;
@@ -69,6 +77,14 @@
     background: transparent;
     color: $color-accent;
     cursor: pointer;
+    transition:
+      color 0.3s ease,
+      transform 0.3s ease;
+
+    &:hover {
+      color: $color-text;
+      transform: translateY(-2px);
+    }
 
     &::after {
       content: '';
