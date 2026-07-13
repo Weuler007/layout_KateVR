@@ -1,3 +1,5 @@
+@use 'vars' as *;
+
 @mixin hover($_property, $_toValue) {
   transition: #{$_property} 0.3s;
 
@@ -18,7 +20,7 @@
   }
 }
 
-// Mantem o conteudo alinhado ao frame de 1280px do Figma.
+// Keeps each section aligned to the 1280px Figma frame.
 @mixin section-container {
   width: min(100% - 32px, $content-width);
   margin-inline: auto;

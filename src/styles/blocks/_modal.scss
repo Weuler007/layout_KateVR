@@ -1,4 +1,7 @@
+@use '../utils' as *;
+
 .modal {
+  // FAQ and Help use the same overlay shell over the dimmed product background.
   position: fixed;
   z-index: 20;
   inset: 0;

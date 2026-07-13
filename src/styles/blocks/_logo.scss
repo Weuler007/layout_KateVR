@@ -1,9 +1,11 @@
+@use '../utils' as *;
+
 .logo {
+  position: relative;
   display: inline-flex;
-  align-items: baseline;
-  gap: 2px;
-  font-size: 30px;
-  font-weight: 800;
+  width: 78px;
+  height: 16px;
+  background: url('../images/logo.png') center / contain no-repeat;
   line-height: 1;
   letter-spacing: 0;
   transition:
@@ -16,15 +18,25 @@
   }
 
   @include desktop {
-    font-size: 18px;
+    width: 78px;
+    height: 16px;
   }
 
   &__text {
-    color: $color-text;
+    position: absolute;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    clip-path: inset(50%);
+    white-space: nowrap;
   }
 
   &__accent {
-    color: $color-accent;
-    font-weight: 400;
+    position: absolute;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    clip-path: inset(50%);
+    white-space: nowrap;
   }
 }

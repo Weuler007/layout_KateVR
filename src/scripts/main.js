@@ -10,7 +10,7 @@ const orderStages = document.querySelectorAll('[data-order-stage]');
 const orderSteps = document.querySelectorAll('.order__step');
 const orderForms = document.querySelectorAll('[data-order-form]');
 
-// O estado no body separa menu mobile e modal para evitar abrir os dois juntos.
+// Body state keeps the mobile menu and modal overlay from fighting for scroll.
 const setMenuState = isOpen => {
   page.classList.toggle('page--menu-open', isOpen);
   menuButton.setAttribute('aria-expanded', String(isOpen));
@@ -30,6 +30,7 @@ playButtons.forEach(button => {
   });
 });
 
+// Modals share one opener/closer so FAQ and Help behave consistently.
 const openModal = modalName => {
   const modal = document.querySelector(`[data-modal="${modalName}"]`);
 
@@ -68,9 +69,11 @@ document.addEventListener('keydown', event => {
   }
 });
 
+// Order screens follow the three Figma steps without sending payment data.
 const setOrderStage = stageName => {
   const stepByStage = {
     details: 0,
+    pay: 1,
     complete: 2,
   };
 
@@ -95,11 +98,12 @@ orderForms.forEach(form => {
     }
 
     form.reset();
-    setOrderStage('complete');
+    setOrderStage(form.dataset.orderForm === 'details' ? 'pay' : 'complete');
     document.querySelector('#order').scrollIntoView({ behavior: 'smooth' });
   });
 });
 
+// Contact form stays on-page: no 405 request, then smooth scrolls to the top.
 document.querySelectorAll('.contact__form').forEach(form => {
   form.addEventListener('submit', event => {
     event.preventDefault();

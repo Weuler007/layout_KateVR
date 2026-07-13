@@ -1,4 +1,7 @@
+@use '../utils' as *;
+
 .play {
+  // The exported Figma bitmap keeps the play button shape exact.
   position: relative;
   display: inline-flex;
   align-items: center;

@@ -1,3 +1,5 @@
+@use '../utils' as *;
+
 .hero {
   min-height: calc(100vh - 126px);
   padding: 42px 0 38px;
@@ -7,7 +9,7 @@
       rgba(25, 20, 61, 0.72),
       transparent 24rem
     ),
-    url('../images/Rectangle.png') center / cover no-repeat,
+    url('../images/rectangle.png') center / cover no-repeat,
     linear-gradient(105deg, #171332 0%, #080710 70%);
   overflow: hidden;
 
@@ -20,9 +22,10 @@
     @include section-container;
 
     display: grid;
+    min-width: 0;
     min-height: calc(100vh - 206px);
     grid-template-rows: auto;
-    gap: 0;
+    gap: 32px;
 
     @include desktop {
       grid-template-columns: minmax(320px, 450px) minmax(500px, 1fr);
@@ -34,22 +37,32 @@
 
   &__content {
     z-index: 1;
+    align-self: start;
+    min-width: 0;
 
     @media (max-width: #{$desktop-min - 1px}) {
-      padding-top: 0;
+      grid-row: 2;
+      text-align: center;
     }
 
     @include desktop {
+      grid-row: auto;
+      align-self: center;
+      text-align: left;
       transform: translateY(42px);
     }
   }
 
   &__eyebrow,
   &__title {
-    font-size: clamp(32px, 7vw, 48px);
+    font-size: clamp(30px, 8vw, 48px);
     font-weight: 800;
     line-height: 1.22;
     text-transform: uppercase;
+
+    @media (max-width: #{$tablet-min - 1px}) {
+      font-size: 28px;
+    }
   }
 
   &__title {
@@ -58,24 +71,22 @@
   }
 
   &__eyebrow {
-    white-space: nowrap;
-  }
-
-  &__eyebrow,
-  &__title,
-  &__description,
-  &__image {
-    @media (max-width: #{$desktop-min - 1px}) {
-      display: none;
+    @include desktop {
+      white-space: nowrap;
     }
   }
 
   &__description {
     max-width: 340px;
     margin-top: 28px;
+    margin-inline: auto;
     color: $color-muted;
     font-size: 17px;
     line-height: 1.45;
+
+    @include desktop {
+      margin-inline: 0;
+    }
   }
 
   &__price {
@@ -108,6 +119,7 @@
 
   &__image {
     place-self: center;
+    max-width: 100%;
     width: min(100%, 640px);
     cursor: pointer;
     filter: drop-shadow(0 36px 24px rgba(0, 0, 0, 0.5));
@@ -115,6 +127,14 @@
 
     &:hover {
       transform: scale(1.03);
+    }
+
+    @media (max-width: #{$desktop-min - 1px}) {
+      grid-row: 1;
+    }
+
+    @media (max-width: #{$tablet-min - 1px}) {
+      width: min(100%, 328px);
     }
 
     @include desktop {

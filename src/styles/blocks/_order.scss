@@ -1,14 +1,14 @@
+@use '../utils' as *;
+
 .order {
   background:
     linear-gradient(90deg, rgba(19, 15, 50, 0.95), rgba(5, 4, 10, 0.94)),
-    url('../images/image.png') left 12% center / min(46vw, 560px) auto no-repeat,
-    url('../images/Rectangle.png') center / cover no-repeat;
+    url('../images/rectangle.png') center / cover no-repeat;
 
   @media (max-width: 760px) {
     background:
       linear-gradient(rgba(19, 15, 50, 0.95), rgba(5, 4, 10, 0.96)),
-      url('../images/image.png') center top 24px / 88vw auto no-repeat,
-      url('../images/Rectangle.png') center / cover no-repeat;
+      url('../images/rectangle.png') center / cover no-repeat;
   }
 
   &__container {
@@ -73,6 +73,7 @@
   }
 
   &__stage {
+    // Only one order screen is visible while JS updates the active step.
     display: none;
     gap: 42px;
 
@@ -95,14 +96,23 @@
   }
 
   &__content {
-    padding-top: 180px;
+    display: grid;
+    align-content: end;
 
     @include tablet {
-      padding-top: 240px;
+      justify-items: start;
     }
+  }
+
+  &__image {
+    width: min(100%, 430px);
+    margin-inline: auto;
+    filter: drop-shadow(0 24px 22px rgba(0, 0, 0, 0.42));
 
     @include desktop {
-      padding-top: 0;
+      width: min(100%, 520px);
+      margin-inline: 0;
+      transform: translateY(-24px);
     }
   }
 
@@ -173,12 +183,45 @@
       grid-template-columns: repeat(2, 1fr);
       column-gap: 24px;
     }
+
+    &--payment {
+      align-self: end;
+
+      @include desktop {
+        max-width: 430px;
+        margin-bottom: 4px;
+      }
+    }
   }
 
   &__field-wide {
     @include tablet {
       grid-column: 1 / -1;
     }
+  }
+
+  &__card-number {
+    position: relative;
+
+    .field__control {
+      padding-right: 72px;
+    }
+  }
+
+  &__card-brand {
+    position: absolute;
+    right: 4px;
+    bottom: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 54px;
+    height: 34px;
+    background: $color-text;
+    color: #0057a8;
+    font-size: 14px;
+    font-weight: 800;
+    font-style: italic;
   }
 
   &__complete-title {
