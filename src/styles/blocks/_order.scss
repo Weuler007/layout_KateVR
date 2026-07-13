@@ -36,12 +36,16 @@
   &__steps {
     display: flex;
     justify-content: space-between;
-    gap: 18px;
+    gap: 8px;
     margin: 0;
     padding: 0;
     color: rgba(146, 146, 146, 0.7);
     font-size: 12px;
     list-style: none;
+
+    @include tablet {
+      gap: 18px;
+    }
   }
 
   &__step {
