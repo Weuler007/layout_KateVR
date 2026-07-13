@@ -10,6 +10,23 @@ const orderStages = document.querySelectorAll('[data-order-stage]');
 const orderSteps = document.querySelectorAll('.order__step');
 const orderForms = document.querySelectorAll('[data-order-form]');
 
+const resetFormAfterValidSubmit = (form, callback) => {
+  form.addEventListener('submit', event => {
+    event.preventDefault();
+
+    if (!form.reportValidity()) {
+      return;
+    }
+
+    form.reset();
+    callback();
+  });
+};
+
+const scrollToSection = selector => {
+  document.querySelector(selector).scrollIntoView({ behavior: 'smooth' });
+};
+
 // Body state keeps the mobile menu and modal overlay from fighting for scroll.
 const setMenuState = isOpen => {
   page.classList.toggle('page--menu-open', isOpen);
@@ -90,24 +107,15 @@ const setOrderStage = stageName => {
 };
 
 orderForms.forEach(form => {
-  form.addEventListener('submit', event => {
-    event.preventDefault();
-
-    if (!form.reportValidity()) {
-      return;
-    }
-
-    form.reset();
+  resetFormAfterValidSubmit(form, () => {
     setOrderStage(form.dataset.orderForm === 'details' ? 'pay' : 'complete');
-    document.querySelector('#order').scrollIntoView({ behavior: 'smooth' });
+    scrollToSection('#order');
   });
 });
 
 // Contact form stays on-page: no 405 request, then smooth scrolls to the top.
 document.querySelectorAll('.contact__form').forEach(form => {
-  form.addEventListener('submit', event => {
-    event.preventDefault();
-    form.reset();
+  resetFormAfterValidSubmit(form, () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 });

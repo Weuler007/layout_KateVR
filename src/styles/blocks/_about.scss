@@ -36,6 +36,7 @@
     transition:
       filter 0.3s ease,
       transform 0.3s ease;
+    will-change: filter, transform;
 
     &:hover {
       filter: saturate(1.15);
@@ -76,15 +77,46 @@
       color: $color-muted;
     }
 
-    span {
+    &-button {
+      padding: 0;
+      border: 0;
+      background: transparent;
+      color: inherit;
       cursor: pointer;
+      font: inherit;
       transition:
         color 0.3s ease,
         transform 0.3s ease;
+      will-change: transform;
 
       &:hover {
         color: $color-accent;
         transform: translateY(-2px);
+      }
+
+      &::before,
+      &::after {
+        display: inline-block;
+        width: 7px;
+        height: 7px;
+        border-bottom: 1px solid currentColor;
+        border-left: 1px solid currentColor;
+        content: '';
+      }
+
+      &--previous::before {
+        margin-right: 8px;
+        transform: rotate(45deg);
+      }
+
+      &--previous::after,
+      &--next::before {
+        display: none;
+      }
+
+      &--next::after {
+        margin-left: 8px;
+        transform: rotate(-135deg);
       }
     }
   }

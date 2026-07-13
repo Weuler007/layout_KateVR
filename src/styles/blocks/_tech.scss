@@ -28,6 +28,7 @@
     transition:
       filter 0.3s ease,
       transform 0.3s ease;
+    will-change: filter, transform;
 
     &:hover {
       filter: drop-shadow(0 0 18px rgba(5, 194, 223, 0.22));

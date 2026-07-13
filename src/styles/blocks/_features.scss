@@ -37,6 +37,7 @@
     transition:
       filter 0.3s ease,
       transform 0.3s ease;
+    will-change: filter, transform;
 
     // Figma exports keep these category icons closer to the source mockup.
     &--education {

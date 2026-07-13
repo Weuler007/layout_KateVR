@@ -124,6 +124,7 @@
     cursor: pointer;
     filter: drop-shadow(0 36px 24px rgba(0, 0, 0, 0.5));
     transition: transform 0.3s ease;
+    will-change: transform;
 
     &:hover {
       transform: scale(1.03);
@@ -169,6 +170,7 @@
     transition:
       color 0.3s ease,
       transform 0.3s ease;
+    will-change: transform;
 
     &:hover {
       color: $color-accent;
@@ -183,6 +185,7 @@
     transition:
       color 0.3s ease,
       transform 0.3s ease;
+    will-change: transform;
 
     &:hover {
       color: $color-text;
@@ -213,7 +216,7 @@
 
   &__pager-button {
     position: relative;
-    padding: 0 0 14px;
+    padding: 0 0 14px 18px;
     border: 0;
     background: transparent;
     color: $color-text;
@@ -221,6 +224,19 @@
     transition:
       color 0.3s ease,
       transform 0.3s ease;
+    will-change: transform;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0.45em;
+      left: 0;
+      width: 7px;
+      height: 7px;
+      border-bottom: 1px solid currentColor;
+      border-left: 1px solid currentColor;
+      transform: rotate(45deg);
+    }
 
     &:hover {
       color: $color-accent;
@@ -239,6 +255,17 @@
 
     &--muted {
       color: $color-muted;
+    }
+
+    &:not(.hero__pager-button--muted) {
+      padding-right: 18px;
+      padding-left: 0;
+
+      &::before {
+        right: 0;
+        left: auto;
+        transform: rotate(-135deg);
+      }
     }
   }
 }

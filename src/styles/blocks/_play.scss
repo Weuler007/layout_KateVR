@@ -15,7 +15,9 @@
   cursor: pointer;
   transition:
     color 0.3s ease,
+    filter 0.3s ease,
     transform 0.3s ease;
+  will-change: filter, transform;
 
   &:hover {
     transform: translateX(4px);

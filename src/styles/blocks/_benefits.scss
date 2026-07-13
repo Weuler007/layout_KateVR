@@ -39,6 +39,7 @@
     transition:
       border-color 0.3s ease,
       transform 0.3s ease;
+    will-change: transform;
 
     &:hover {
       border-color: $color-line;
@@ -58,6 +59,7 @@
     transition:
       filter 0.3s ease,
       transform 0.3s ease;
+    will-change: filter, transform;
 
     // These icons are the Figma image assets for the benefits cards.
     &--compatible {
