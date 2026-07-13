@@ -11,7 +11,7 @@
     grid-template-columns: auto auto;
     justify-content: space-between;
     align-items: center;
-    min-height: 126px;
+    min-height: 60px;
     gap: 24px;
 
     @include desktop {
@@ -31,21 +31,20 @@
     z-index: 12;
     display: grid;
     justify-self: end;
-    width: 78px;
-    height: 78px;
+    width: 48px;
+    height: 48px;
     padding: 0;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    border-radius: 4px;
-    background: transparent;
+    border: 0;
+    background: transparent url('../images/Group.png') center / 20px 10px
+      no-repeat;
     cursor: pointer;
     place-content: center;
-    gap: 7px;
     transition:
+      background-image 0.3s ease,
       border-color 0.3s ease,
       transform 0.3s ease;
 
     &:hover {
-      border-color: $color-accent;
       transform: scale(1.04);
     }
 
@@ -55,10 +54,13 @@
   }
 
   &__menu-line {
-    width: 34px;
-    height: 4px;
+    width: 20px;
+    height: 2px;
+    opacity: 0;
     background: $color-text;
-    transition: transform 0.3s ease;
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease;
   }
 
   &__nav {
@@ -120,9 +122,15 @@
 }
 
 .page--menu-open .header__menu-line:first-child {
-  transform: translateY(4px) rotate(45deg);
+  opacity: 1;
+  transform: translateY(1px) rotate(45deg);
 }
 
 .page--menu-open .header__menu-line:last-child {
-  transform: translateY(-5px) rotate(-45deg);
+  opacity: 1;
+  transform: translateY(-1px) rotate(-45deg);
+}
+
+.page--menu-open .header__menu-button {
+  background-image: none;
 }

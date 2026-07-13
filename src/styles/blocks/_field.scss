@@ -57,4 +57,21 @@
       resize: vertical;
     }
   }
+
+  select.field__control {
+    padding-inline: 24px 42px;
+    border-bottom: 0;
+    border-radius: 2px;
+    appearance: none;
+    background:
+      linear-gradient(45deg, transparent 50%, $color-accent 50%)
+        calc(100% - 18px) 50% / 5px 5px no-repeat,
+      linear-gradient(135deg, $color-accent 50%, transparent 50%)
+        calc(100% - 13px) 50% / 5px 5px no-repeat,
+      $color-field;
+
+    &:focus {
+      box-shadow: 0 0 0 1px $color-accent;
+    }
+  }
 }

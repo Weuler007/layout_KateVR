@@ -1,7 +1,7 @@
 @use '../utils' as *;
 
 .hero {
-  min-height: calc(100vh - 126px);
+  min-height: calc(100vh - 60px);
   padding: 42px 0 38px;
   background:
     radial-gradient(
@@ -23,7 +23,7 @@
 
     display: grid;
     min-width: 0;
-    min-height: calc(100vh - 206px);
+    min-height: calc(100vh - 140px);
     grid-template-rows: auto;
     gap: 32px;
 

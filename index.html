@@ -10,7 +10,8 @@
     <link
       rel="icon"
       type="image/png"
-      href="src/images/logo.png"
+      sizes="64x64"
+      href="src/images/group100.png"
     />
     <link
       rel="stylesheet"
@@ -465,23 +466,33 @@
                   name="country"
                   required
                 >
-                  <option value="">Select country</option>
                   <option>Ukraine</option>
+                  <option>Russia</option>
+                  <option>France</option>
+                  <option>Spain</option>
                   <option>United States</option>
-                  <option>Brazil</option>
-                  <option>United Kingdom</option>
+                  <option>China</option>
+                  <option>Italy</option>
+                  <option>Turkey</option>
                 </select>
               </label>
               <label class="field">
                 <span class="field__label">City*</span>
-                <input
+                <select
                   class="field__control"
-                  type="text"
                   name="city"
-                  placeholder="Kyiv"
                   autocomplete="address-level2"
                   required
-                />
+                >
+                  <option>Lviv</option>
+                  <option>Kyiv</option>
+                  <option>Zaporizhia</option>
+                  <option>Kharkiv</option>
+                  <option>Odessa</option>
+                  <option>Dnipro</option>
+                  <option>Donetsk</option>
+                  <option>Mykolaiv</option>
+                </select>
               </label>
               <label class="field order__field-wide">
                 <span class="field__label">Shipping Address*</span>

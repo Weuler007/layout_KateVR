@@ -25,7 +25,7 @@
   }
 
   &__section {
-    scroll-margin-top: 126px;
+    scroll-margin-top: 60px;
     padding-block: 56px;
 
     @include tablet {
@@ -40,7 +40,7 @@
 }
 
 section {
-  scroll-margin-top: 126px;
+  scroll-margin-top: 60px;
 
   @include desktop {
     scroll-margin-top: 72px;
