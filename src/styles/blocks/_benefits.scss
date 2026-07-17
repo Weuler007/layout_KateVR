@@ -1,9 +1,15 @@
 @use '../utils' as *;
 
 .benefits {
+  display: grid;
+  align-items: center;
   background:
     linear-gradient(90deg, rgba(20, 16, 46, 0.92), rgba(5, 4, 10, 0.96)),
     $color-page;
+
+  @include desktop {
+    min-height: 720px;
+  }
 
   &__container {
     @include section-container;
@@ -24,10 +30,15 @@
 
   &__grid {
     display: grid;
+    gap: 24px;
     margin-top: 48px;
 
     @include tablet {
       grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include desktop {
+      margin-top: 76px;
     }
   }
 
@@ -87,8 +98,8 @@
     margin-top: 14px;
     margin-inline: auto;
     color: $color-muted;
-    font-size: 16px;
-    line-height: 1.5;
+    font-size: 13px;
+    line-height: 1.45;
   }
 
   &__nowrap {
@@ -99,6 +110,6 @@
 
   &__button {
     min-width: 200px;
-    margin-top: 44px;
+    margin-top: 52px;
   }
 }

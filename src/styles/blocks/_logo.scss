@@ -11,6 +11,7 @@
   transition:
     opacity 0.3s ease,
     transform 0.3s ease;
+  will-change: opacity, transform;
 
   &:hover {
     opacity: 0.78;

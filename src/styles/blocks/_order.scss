@@ -1,9 +1,14 @@
 @use '../utils' as *;
 
 .order {
+  display: none;
   background:
     linear-gradient(90deg, rgba(19, 15, 50, 0.95), rgba(5, 4, 10, 0.94)),
     url('../images/rectangle.png') center / cover no-repeat;
+
+  &:target {
+    display: block;
+  }
 
   @media (max-width: 760px) {
     background:

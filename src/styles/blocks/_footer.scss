@@ -1,8 +1,15 @@
 @use '../utils' as *;
 
 .footer {
+  display: grid;
+  align-items: center;
+  min-height: 88px;
   background: #000;
   padding-block: 28px;
+
+  @include desktop {
+    padding-block: 0;
+  }
 
   &__container {
     @include section-container;
@@ -40,6 +47,7 @@
     transition:
       color 0.3s ease,
       transform 0.3s ease;
+    will-change: transform;
 
     &:hover {
       color: $color-accent;
@@ -57,6 +65,7 @@
       filter 0.3s ease,
       opacity 0.3s ease,
       transform 0.3s ease;
+    will-change: filter, transform;
 
     img {
       display: block;
@@ -85,6 +94,7 @@
       border-color 0.3s ease,
       box-shadow 0.3s ease,
       transform 0.3s ease;
+    will-change: transform;
 
     &::before {
       content: '';

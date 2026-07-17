@@ -23,6 +23,12 @@ const resetFormAfterValidSubmit = (form, callback) => {
   });
 };
 
+const bindValidSubmitHandlers = (forms, callback) => {
+  forms.forEach(form => {
+    resetFormAfterValidSubmit(form, () => callback(form));
+  });
+};
+
 const scrollToSection = selector => {
   document.querySelector(selector).scrollIntoView({ behavior: 'smooth' });
 };
@@ -106,16 +112,12 @@ const setOrderStage = stageName => {
   });
 };
 
-orderForms.forEach(form => {
-  resetFormAfterValidSubmit(form, () => {
-    setOrderStage(form.dataset.orderForm === 'details' ? 'pay' : 'complete');
-    scrollToSection('#order');
-  });
+bindValidSubmitHandlers(orderForms, form => {
+  setOrderStage(form.dataset.orderForm === 'details' ? 'pay' : 'complete');
+  scrollToSection('#order');
 });
 
 // Contact form stays on-page: no 405 request, then smooth scrolls to the top.
-document.querySelectorAll('.contact__form').forEach(form => {
-  resetFormAfterValidSubmit(form, () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
+bindValidSubmitHandlers(document.querySelectorAll('.contact__form'), () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 });

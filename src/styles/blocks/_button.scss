@@ -19,6 +19,7 @@
     background 0.3s ease,
     box-shadow 0.3s ease,
     transform 0.3s ease;
+  will-change: transform;
 
   &:hover {
     background: $color-accent-dark;

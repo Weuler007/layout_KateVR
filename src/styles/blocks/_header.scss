@@ -1,6 +1,11 @@
 @use '../utils' as *;
 
 .header {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 11;
   background: transparent;
 
   &__container {
@@ -43,6 +48,7 @@
       background-image 0.3s ease,
       border-color 0.3s ease,
       transform 0.3s ease;
+    will-change: transform;
 
     &:hover {
       transform: scale(1.04);
@@ -61,12 +67,14 @@
     transition:
       opacity 0.3s ease,
       transform 0.3s ease;
+    will-change: opacity, transform;
   }
 
-  &__nav {
+  &__nav.nav {
     @include desktop {
       justify-self: end;
-      margin-right: 30px;
+      width: 330px;
+      margin-right: 34px;
     }
   }
 
@@ -97,9 +105,11 @@
     background: transparent;
     color: $color-accent;
     cursor: pointer;
+    font: inherit;
     transition:
       color 0.3s ease,
       transform 0.3s ease;
+    will-change: transform;
 
     &:hover {
       color: $color-text;
@@ -120,6 +130,16 @@
       transform: translateY(2px);
     }
   }
+}
+
+.page > .page__header,
+.header.page__header {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  transform: none;
 }
 
 .page--menu-open .header__menu-line:first-child {

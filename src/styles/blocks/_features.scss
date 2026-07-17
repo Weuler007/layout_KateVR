@@ -1,7 +1,13 @@
 @use '../utils' as *;
 
 .features {
+  display: grid;
+  align-items: center;
   background: $color-page;
+
+  @include desktop {
+    min-height: 620px;
+  }
 
   &__container {
     @include section-container;
@@ -18,7 +24,8 @@
 
     @include desktop {
       grid-template-columns: repeat(4, 1fr);
-      gap: 44px;
+      gap: 36px;
+      margin-top: 70px;
     }
   }
 
@@ -72,8 +79,8 @@
     width: min(100%, 250px);
     margin: 14px auto 0;
     color: $color-muted;
-    font-size: 16px;
-    line-height: 1.5;
+    font-size: 13px;
+    line-height: 1.45;
   }
 
   &__nowrap {

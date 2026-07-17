@@ -26,6 +26,7 @@
   transition:
     opacity 0.3s ease,
     transform 0.3s ease;
+  will-change: opacity, transform;
 
   &::before {
     content: '';
@@ -60,10 +61,11 @@
     z-index: auto;
     flex-direction: row;
     align-items: center;
-    gap: 22px;
+    justify-content: space-between;
+    gap: 0;
     padding: 0;
     background: transparent;
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 500;
     opacity: 1;
     overflow: visible;

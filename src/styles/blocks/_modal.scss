@@ -14,6 +14,7 @@
   overflow-y: auto;
   pointer-events: none;
   transition: opacity 0.3s ease;
+  will-change: opacity;
   place-items: center;
 
   &--open {
@@ -72,6 +73,7 @@
     transition:
       border-color 0.3s ease,
       transform 0.3s ease;
+    will-change: transform;
 
     &::before,
     &::after {
@@ -110,6 +112,7 @@
     transition:
       color 0.3s ease,
       transform 0.3s ease;
+    will-change: transform;
 
     &::before {
       content: '';
@@ -227,6 +230,7 @@
     transition:
       color 0.3s ease,
       transform 0.3s ease;
+    will-change: transform;
 
     &::after {
       content: '';
@@ -279,6 +283,7 @@
       transition:
         color 0.3s ease,
         transform 0.3s ease;
+      will-change: transform;
 
       &:hover {
         color: $color-text;
@@ -320,6 +325,7 @@
     transition:
       color 0.3s ease,
       transform 0.3s ease;
+    will-change: transform;
 
     &:hover,
     &--active {

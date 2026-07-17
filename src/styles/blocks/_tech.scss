@@ -1,7 +1,13 @@
 @use '../utils' as *;
 
 .tech {
+  display: grid;
+  align-items: center;
   background: $color-page;
+
+  @include desktop {
+    min-height: 675px;
+  }
 
   &__container {
     @include section-container;
@@ -13,6 +19,14 @@
     font-weight: 800;
     text-transform: uppercase;
 
+    @include desktop {
+      width: min(100%, 900px);
+      margin-inline: auto;
+      padding-left: 650px;
+      box-sizing: border-box;
+      text-align: left;
+    }
+
     span {
       color: $color-accent;
       font-weight: 400;
@@ -23,7 +37,7 @@
     display: block;
     width: 100%;
     max-width: 900px;
-    margin: 44px auto 0;
+    margin: 52px auto 0;
     cursor: pointer;
     transition:
       filter 0.3s ease,

@@ -1,7 +1,13 @@
 @use '../utils' as *;
 
 .contact {
+  display: grid;
+  align-items: center;
   background: $color-page;
+
+  @include desktop {
+    min-height: 620px;
+  }
 
   &__container {
     @include section-container;
@@ -10,8 +16,8 @@
     gap: 40px;
 
     @include desktop {
-      grid-template-columns: 0.8fr 1.2fr;
-      gap: 72px;
+      grid-template-columns: 0.82fr 1fr;
+      gap: 96px;
     }
   }
 
@@ -50,6 +56,7 @@
       transition:
         color 0.3s ease,
         transform 0.3s ease;
+      will-change: transform;
 
       &:hover {
         color: $color-accent;
@@ -61,13 +68,18 @@
   &__form {
     display: grid;
     gap: 18px;
+
+    @include desktop {
+      max-width: 520px;
+      justify-self: end;
+    }
   }
 
   &__button {
     margin-top: 14px;
 
     @include tablet {
-      justify-self: end;
+      justify-self: center;
     }
   }
 }

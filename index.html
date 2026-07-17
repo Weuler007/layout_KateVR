@@ -19,104 +19,104 @@
     />
   </head>
   <body class="page">
-    <header class="header page__header">
-      <div class="header__container">
-        <a
-          class="logo header__logo"
-          href="#"
-          aria-label="KAT VR home"
-        >
-          <span class="logo__text">KAT</span>
-          <span class="logo__accent">VR</span>
-        </a>
-
-        <button
-          class="header__language"
-          type="button"
-          data-modal-open="language"
-        >
-          En
-        </button>
-
-        <button
-          class="header__menu-button"
-          type="button"
-          aria-label="Open menu"
-          aria-controls="main-menu"
-          aria-expanded="false"
-        >
-          <span class="header__menu-line"></span>
-          <span class="header__menu-line"></span>
-        </button>
-
-        <nav
-          class="nav header__nav"
-          id="main-menu"
-          aria-label="Main navigation"
-        >
-          <a
-            class="nav__link"
-            href="#about"
-          >
-            About
-          </a>
-          <a
-            class="nav__link"
-            href="#tech"
-          >
-            Tech
-          </a>
-          <a
-            class="nav__link"
-            href="#benefits"
-          >
-            Benefits
-          </a>
-          <a
-            class="nav__link"
-            href="#contact"
-          >
-            Contact
-          </a>
-          <button
-            class="nav__link nav__link--mobile"
-            type="button"
-            data-modal-open="language"
-          >
-            Language
-          </button>
-          <button
-            class="nav__link nav__link--mobile"
-            type="button"
-            data-modal-open="faq"
-          >
-            FAQ
-          </button>
-          <button
-            class="nav__link nav__link--mobile"
-            type="button"
-            data-modal-open="help"
-          >
-            Help
-          </button>
-        </nav>
-
-        <div class="header__actions">
-          <a
-            class="button header__button"
-            href="#order"
-          >
-            Buy Now
-          </a>
-        </div>
-      </div>
-    </header>
-
     <main>
       <section
         class="hero"
         id="home"
       >
+        <header class="header page__header">
+          <div class="header__container">
+            <a
+              class="logo header__logo"
+              href="#"
+              aria-label="KAT VR home"
+            >
+              <span class="logo__text">KAT</span>
+              <span class="logo__accent">VR</span>
+            </a>
+
+            <button
+              class="header__language"
+              type="button"
+              data-modal-open="language"
+            >
+              En
+            </button>
+
+            <button
+              class="header__menu-button"
+              type="button"
+              aria-label="Open menu"
+              aria-controls="main-menu"
+              aria-expanded="false"
+            >
+              <span class="header__menu-line"></span>
+              <span class="header__menu-line"></span>
+            </button>
+
+            <nav
+              class="nav header__nav"
+              id="main-menu"
+              aria-label="Main navigation"
+            >
+              <a
+                class="nav__link"
+                href="#about"
+              >
+                About
+              </a>
+              <a
+                class="nav__link"
+                href="#tech"
+              >
+                Tech
+              </a>
+              <a
+                class="nav__link"
+                href="#benefits"
+              >
+                Benefits
+              </a>
+              <a
+                class="nav__link"
+                href="#contact"
+              >
+                Contact
+              </a>
+              <button
+                class="nav__link nav__link--mobile"
+                type="button"
+                data-modal-open="language"
+              >
+                Language
+              </button>
+              <button
+                class="nav__link nav__link--mobile"
+                type="button"
+                data-modal-open="faq"
+              >
+                FAQ
+              </button>
+              <button
+                class="nav__link nav__link--mobile"
+                type="button"
+                data-modal-open="help"
+              >
+                Help
+              </button>
+            </nav>
+
+            <div class="header__actions">
+              <a
+                class="button header__button"
+                href="#order"
+              >
+                Buy Now
+              </a>
+            </div>
+          </div>
+        </header>
+
         <div class="hero__container">
           <div class="hero__content">
             <p class="hero__eyebrow">The new start of</p>
@@ -177,6 +177,22 @@
                 type="button"
                 aria-label="Show previous slide"
               >
+                <svg
+                  class="hero__pager-icon hero__pager-icon--previous"
+                  width="8"
+                  height="8"
+                  viewBox="0 0 8 8"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path
+                    d="M5.5 1 2.5 4l3 3"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
                 Previous
               </button>
               <button
@@ -185,6 +201,22 @@
                 aria-label="Show next slide"
               >
                 Next
+                <svg
+                  class="hero__pager-icon hero__pager-icon--next"
+                  width="8"
+                  height="8"
+                  viewBox="0 0 8 8"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path
+                    d="M2.5 1 5.5 4l-3 3"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
               </button>
             </div>
           </div>
