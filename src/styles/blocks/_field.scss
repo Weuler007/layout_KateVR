@@ -1,6 +1,7 @@
 @use '../utils' as *;
 
 .field {
+  // Campo base usado nos formularios de contato, endereco e pagamento.
   display: grid;
   gap: 8px;
 
@@ -10,6 +11,7 @@
   }
 
   &__control {
+    // Inputs seguem o visual minimalista com linha inferior e fundo transparente.
     width: 100%;
     min-height: 44px;
     box-sizing: border-box;
@@ -27,7 +29,7 @@
       box-shadow: 0 1px 0 $color-accent;
     }
 
-    // Browser validation mirrors the red error state from the Figma UI kit.
+    // A validacao nativa do navegador replica o estado de erro vermelho do UI kit.
     &:user-invalid {
       border-bottom-color: #ff4d4d;
       box-shadow: 0 1px 0 #ff4d4d;
@@ -45,6 +47,7 @@
     &:-webkit-autofill,
     &:-webkit-autofill:hover,
     &:-webkit-autofill:focus {
+      // Autofill do Chrome recebe fundo escuro para nao quebrar o tema visual.
       border-bottom-color: $color-accent;
       -webkit-text-fill-color: $color-text;
       box-shadow: 0 0 0 1000px $color-page inset;
@@ -59,6 +62,7 @@
   }
 
   select.field__control {
+    // Select customizado desenha a seta com gradientes em vez do estilo nativo.
     padding-inline: 24px 42px;
     border-bottom: 0;
     border-radius: 2px;

@@ -19,6 +19,7 @@
     />
   </head>
   <body class="page">
+    <!-- Header global: fica fora do main para poder sobrepor o hero com position absolute. -->
     <header class="header page__header">
       <div class="header__container">
         <a
@@ -49,6 +50,7 @@
           <span class="header__menu-line"></span>
         </button>
 
+        <!-- Navegacao principal: links desktop e acoes extras usadas no menu mobile. -->
         <nav
           class="nav header__nav"
           id="main-menu"
@@ -113,6 +115,7 @@
     </header>
 
     <main>
+      <!-- Hero: primeira dobra da pagina, com texto, produto e controles inferiores. -->
       <section
         class="hero"
         id="home"
@@ -223,6 +226,7 @@
         </div>
       </section>
 
+      <!-- Features: apresenta usos alem de jogos em cards curtos. -->
       <section
         class="features page__section"
         id="gaming"
@@ -284,6 +288,7 @@
         </div>
       </section>
 
+      <!-- About: junta explicacao do produto e contexto da empresa. -->
       <section
         class="about page__section"
         id="about"
@@ -358,6 +363,7 @@
         </div>
       </section>
 
+      <!-- Tech: usa uma imagem unica exportada do layout com as especificacoes. -->
       <section
         class="tech page__section"
         id="tech"
@@ -372,6 +378,7 @@
         </div>
       </section>
 
+      <!-- Benefits: reforca os principais diferenciais antes do CTA de compra. -->
       <section
         class="benefits page__section"
         id="benefits"
@@ -423,6 +430,7 @@
         </div>
       </section>
 
+      <!-- Order: fluxo em etapas controlado pelo JS, aberto quando o hash chega em #order. -->
       <section
         class="order page__section"
         id="order"
@@ -448,7 +456,7 @@
             class="order__stage order__stage--active"
             data-order-stage="details"
           >
-            <!-- Address data is collected before the card screen shown in the Figma flow. -->
+            <!-- Os dados de entrega sao coletados antes da tela de cartao do fluxo. -->
             <div class="order__content">
               <img
                 class="order__image"
@@ -699,6 +707,7 @@
         </div>
       </section>
 
+      <!-- Contact: bloco final de contato com canais diretos e formulario. -->
       <section
         class="contact page__section"
         id="contact"
@@ -773,6 +782,7 @@
       </section>
     </main>
 
+    <!-- Modal de idioma: reutiliza o mesmo mecanismo de abertura dos outros modais. -->
     <div
       class="modal"
       data-modal="language"
@@ -850,12 +860,12 @@
       </div>
     </div>
 
+    <!-- Modal de FAQ: o conteudo fica no DOM para abrir sem atraso. -->
     <div
       class="modal"
       data-modal="faq"
       aria-hidden="true"
     >
-      <!-- FAQ content stays in the DOM so the modal opens instantly. -->
       <div class="modal__panel modal__panel--faq">
         <button
           class="modal__close"
@@ -914,6 +924,7 @@
       </div>
     </div>
 
+    <!-- Modal de ajuda: concentra links e contatos de suporte. -->
     <div
       class="modal"
       data-modal="help"
@@ -950,6 +961,7 @@
       </div>
     </div>
 
+    <!-- Footer: repete navegacao essencial, redes sociais e retorno ao topo. -->
     <footer class="footer">
       <div class="footer__container">
         <a

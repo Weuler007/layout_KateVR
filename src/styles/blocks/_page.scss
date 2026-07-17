@@ -1,6 +1,7 @@
 @use '../utils' as *;
 
 .page {
+  // Base global da pagina: largura minima, fundo geral e bloqueio horizontal.
   min-width: 320px;
   margin: 0;
   overflow-x: hidden;
@@ -15,10 +16,12 @@
 
   &--menu-open,
   &--modal-open {
+    // Evita scroll do body quando menu ou modal estao abertos.
     overflow: hidden;
   }
 
   &__section {
+    // Espacamento padrao das secoes internas e compensacao para links ancora.
     box-sizing: border-box;
     scroll-margin-top: 96px;
     padding-block: 56px;
@@ -35,6 +38,7 @@
 }
 
 section {
+  // Garante que qualquer ancora de secao pare abaixo do header visual.
   scroll-margin-top: 96px;
 
   @include desktop {

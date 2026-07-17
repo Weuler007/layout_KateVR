@@ -1,6 +1,7 @@
 @use '../utils' as *;
 
 .tech {
+  // Secao de especificacoes tecnicas centralizada no fundo escuro.
   display: grid;
   align-items: center;
   background: $color-page;
@@ -14,6 +15,7 @@
   }
 
   &__title {
+    // No desktop, o titulo fica deslocado para alinhar com a composicao da imagem.
     text-align: center;
     font-size: 28px;
     font-weight: 800;
@@ -34,6 +36,7 @@
   }
 
   &__image {
+    // A imagem traz linhas e labels do Figma em um unico asset.
     display: block;
     width: 100%;
     max-width: 900px;

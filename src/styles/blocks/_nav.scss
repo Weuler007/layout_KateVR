@@ -1,8 +1,10 @@
 @use '../utils' as *;
 
 .nav {
+  // Offset usado para alinhar os links dentro do painel mobile exportado do Figma.
   --nav-list-offset: 15px;
 
+  // Por padrao, a nav e o menu mobile fechado.
   position: fixed;
   inset: 0 0 auto auto;
   z-index: 10;
@@ -36,7 +38,7 @@
     background: $color-panel;
   }
 
-  // Mobile uses a narrow Figma panel; tablet expands the same menu into an overlay.
+  // No tablet, o mesmo menu vira um overlay maior.
   @include tablet {
     --nav-list-offset: 54.3vw;
 
@@ -55,18 +57,21 @@
   }
 
   @include desktop {
+    // No desktop, a nav volta ao fluxo normal do header.
     --nav-list-offset: 0;
 
     position: static;
     z-index: auto;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     gap: 0;
+    min-height: 0;
     padding: 0;
     background: transparent;
     font-size: 16px;
     font-weight: 500;
+    line-height: 16px;
     opacity: 1;
     overflow: visible;
     pointer-events: auto;
@@ -78,6 +83,7 @@
   }
 
   &__link {
+    // Links e botoes dividem a mesma aparencia para desktop e menu mobile.
     position: relative;
     z-index: 1;
     display: block;
@@ -94,6 +100,7 @@
     @include hover(color, $color-accent);
 
     &:first-child {
+      // Primeiro item fica destacado apenas no painel mobile.
       padding-block: 8px;
       background: rgba(5, 4, 10, 0.36);
       color: $color-accent;
@@ -112,6 +119,7 @@
   }
 
   &__link--mobile {
+    // Itens extras existem so no menu mobile.
     @include desktop {
       display: none;
     }
@@ -119,6 +127,7 @@
 }
 
 .page--menu-open .nav {
+  // Classe aplicada pelo JS para revelar o menu.
   opacity: 1;
   pointer-events: auto;
   transform: none;

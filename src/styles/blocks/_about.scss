@@ -1,6 +1,7 @@
 @use '../utils' as *;
 
 .about {
+  // A secao usa grid para centralizar os dois blocos principais no fundo escuro.
   display: grid;
   align-items: center;
   background:
@@ -14,6 +15,7 @@
   &__container {
     @include section-container;
 
+    // O espacamento vertical separa produto e empresa como no mockup.
     display: grid;
     gap: 92px;
 
@@ -24,6 +26,7 @@
 
   &__product,
   &__company {
+    // Mobile empilha conteudo; desktop usa duas colunas para imagem e texto.
     display: grid;
     gap: 32px;
 
@@ -39,6 +42,7 @@
   }
 
   &__image {
+    // A foto mantem proporcao controlada e ganha feedback visual no hover.
     display: block;
     width: min(100%, 430px);
     max-height: 340px;
@@ -56,6 +60,7 @@
   }
 
   &__slider {
+    // Controles de slider reproduzem a linha inferior do layout.
     position: relative;
     display: flex;
     justify-content: space-between;
@@ -139,6 +144,7 @@
   }
 
   &__title {
+    // Titulos da secao seguem o padrao uppercase com acento azul no span.
     margin-top: 8px;
     font-size: 28px;
     font-weight: 800;
@@ -163,6 +169,7 @@
   }
 
   &__company {
+    // O bloco institucional troca a proporcao das colunas no desktop.
     .about__text {
       max-width: 429px;
       font-size: 14px;
@@ -175,6 +182,7 @@
   }
 
   &__watermark {
+    // A marca lateral aparece apenas no desktop, como elemento decorativo.
     display: none;
 
     @include desktop {

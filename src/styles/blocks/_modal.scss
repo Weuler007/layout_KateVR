@@ -1,7 +1,7 @@
 @use '../utils' as *;
 
 .modal {
-  // FAQ and Help use the same overlay shell over the dimmed product background.
+  // FAQ, Help e Idioma compartilham a mesma camada fixa sobre o fundo escurecido.
   position: fixed;
   z-index: 20;
   inset: 0;
@@ -18,11 +18,13 @@
   place-items: center;
 
   &--open {
+    // A classe aberta libera clique e mostra o overlay com transicao.
     opacity: 1;
     pointer-events: auto;
   }
 
   &__panel {
+    // Painel base dos modais; variacoes ajustam medidas por tipo de conteudo.
     position: relative;
     width: min(100%, 880px);
     box-sizing: border-box;
@@ -35,6 +37,7 @@
     }
 
     &--help {
+      // Help precisa de mais altura por conter texto e lista de contatos.
       min-height: 550px;
       padding: 60px 88px 74px;
 
@@ -45,6 +48,7 @@
     }
 
     &--faq {
+      // No mobile, o FAQ fica estreito e com borda azul como no layout.
       @media (max-width: 760px) {
         width: min(100%, 280px);
         min-height: 608px;
@@ -54,6 +58,7 @@
     }
 
     &--language {
+      // O seletor de idioma usa painel compacto e lista vertical.
       width: min(100%, 320px);
       min-height: 405px;
       padding: 75px 0 30px;
@@ -62,6 +67,7 @@
   }
 
   &__close {
+    // O X de fechar e desenhado com pseudo-elementos para manter nitidez.
     position: absolute;
     top: 18px;
     right: 18px;
@@ -101,6 +107,7 @@
   }
 
   &__back {
+    // Botao de voltar usado no modal de idioma.
     position: absolute;
     top: 23px;
     left: 20px;
@@ -132,6 +139,7 @@
   }
 
   &__title {
+    // Titulos dos modais repetem o padrao branco com destaque azul.
     max-width: 520px;
     font-size: clamp(24px, 4vw, 34px);
     font-weight: 800;
@@ -145,6 +153,7 @@
   }
 
   &__item {
+    // Cada pergunta do FAQ usa details/summary para abrir sem JS extra.
     max-width: 700px;
     margin-top: 18px;
     border: 1px solid $color-line;
@@ -181,6 +190,7 @@
   }
 
   &__panel--faq &__item {
+    // Ajustes especificos deixam o FAQ legivel dentro do painel mobile.
     @media (max-width: 760px) {
       width: 100%;
       max-width: none;
@@ -220,6 +230,7 @@
   }
 
   &__more {
+    // Botao visual para expandir conteudo futuro; no mobile fica oculto.
     display: grid;
     margin: 44px auto 0;
     border: 0;
@@ -254,6 +265,7 @@
   }
 
   &__text {
+    // Texto corrido dos modais usa largura controlada para leitura confortavel.
     margin-top: 22px;
     color: $color-muted;
     line-height: 1.55;
@@ -271,6 +283,7 @@
   }
 
   &__actions {
+    // Links e contatos do Help formam pares de acao e informacao.
     display: grid;
     gap: 12px;
     margin-top: 24px;
@@ -308,11 +321,13 @@
   }
 
   &__languages {
+    // Lista simples para manter todos os idiomas clicaveis no painel.
     display: grid;
     gap: 0;
   }
 
   &__language {
+    // Cada idioma ocupa uma linha inteira para facilitar clique/toque.
     width: 100%;
     min-height: 27px;
     padding: 0 20px;

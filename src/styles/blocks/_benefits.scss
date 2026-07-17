@@ -1,6 +1,7 @@
 @use '../utils' as *;
 
 .benefits {
+  // Secao centralizada com fundo escuro para destacar os diferenciais.
   display: grid;
   align-items: center;
   background:
@@ -14,10 +15,12 @@
   &__container {
     @include section-container;
 
+    // Todo o bloco e alinhado ao centro no mockup.
     text-align: center;
   }
 
   &__title {
+    // O span azul separa visualmente a pergunta do nome do produto.
     font-size: 28px;
     font-weight: 800;
     text-transform: uppercase;
@@ -29,6 +32,7 @@
   }
 
   &__grid {
+    // Mobile empilha cards; tablet/desktop distribuem em tres colunas.
     display: grid;
     gap: 24px;
     margin-top: 48px;
@@ -43,6 +47,7 @@
   }
 
   &__item {
+    // A borda aparece so no hover para manter o visual limpo.
     min-height: 246px;
     box-sizing: border-box;
     padding: 32px 24px;
@@ -55,6 +60,7 @@
   }
 
   &__icon {
+    // Icones exportados do Figma mantem fidelidade aos cards de beneficios.
     position: relative;
     width: 70px;
     height: 70px;
@@ -68,7 +74,6 @@
       transform 0.3s ease;
     will-change: filter, transform;
 
-    // These icons are the Figma image assets for the benefits cards.
     &--compatible {
       background-image: url('../images/pесурс1.png');
     }
@@ -83,6 +88,7 @@
   }
 
   &__item:hover &__icon {
+    // Hover destaca o icone sem alterar o tamanho do card.
     filter: drop-shadow(0 0 12px rgba(5, 194, 223, 0.48));
     transform: scale(1.1);
   }
@@ -103,6 +109,7 @@
   }
 
   &__nowrap {
+    // Em telas maiores algumas frases permanecem em uma linha para bater o layout.
     @include tablet {
       white-space: nowrap;
     }

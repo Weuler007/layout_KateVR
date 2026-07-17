@@ -1,6 +1,7 @@
 @use '../utils' as *;
 
 .contact {
+  // Bloco final da pagina, com texto de apoio ao lado do formulario no desktop.
   display: grid;
   align-items: center;
   background: $color-page;
@@ -12,6 +13,7 @@
   &__container {
     @include section-container;
 
+    // O grid empilha no mobile e abre em duas colunas no desktop.
     display: grid;
     gap: 40px;
 
@@ -45,6 +47,7 @@
   }
 
   &__address {
+    // Address agrupa canais diretos mantendo semantica de contato.
     display: grid;
     gap: 8px;
     margin-top: 48px;
@@ -66,6 +69,7 @@
   }
 
   &__form {
+    // Formulario compacto no mobile e alinhado a direita no desktop.
     display: grid;
     gap: 18px;
 
@@ -76,6 +80,7 @@
   }
 
   &__button {
+    // O CTA do formulario fica centralizado em telas maiores.
     margin-top: 14px;
 
     @include tablet {
