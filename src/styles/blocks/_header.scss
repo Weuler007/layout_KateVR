@@ -2,9 +2,7 @@
 
 .header {
   position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
+  inset: 0 0 auto;
   z-index: 11;
   background: transparent;
 
@@ -19,7 +17,6 @@
     gap: 24px;
 
     @include desktop {
-      width: min(100% - 220px, 1060px);
       grid-template-columns: 78px auto minmax(260px, 1fr) 200px;
       justify-content: stretch;
       min-height: 23px;
@@ -130,16 +127,6 @@
       transform: translateY(2px);
     }
   }
-}
-
-.page > .page__header,
-.header.page__header {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  width: 100%;
-  transform: none;
 }
 
 .page--menu-open .header__menu-line:first-child {

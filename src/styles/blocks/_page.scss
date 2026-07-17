@@ -18,14 +18,6 @@
     overflow: hidden;
   }
 
-  &__header {
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: 11;
-  }
-
   &__section {
     box-sizing: border-box;
     scroll-margin-top: 96px;
