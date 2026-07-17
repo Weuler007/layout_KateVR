@@ -14,8 +14,8 @@
   overflow: hidden;
 
   @include desktop {
-    min-height: calc(100vh - 72px);
-    padding: 56px 0 38px;
+    min-height: 740px;
+    padding: 0 0 84px;
   }
 
   &__container {
@@ -28,6 +28,8 @@
     gap: 32px;
 
     @include desktop {
+      width: min(100% - 220px, 1060px);
+      min-height: 740px;
       grid-template-columns: minmax(320px, 450px) minmax(500px, 1fr);
       grid-template-rows: 1fr auto;
       align-items: center;

@@ -28,4 +28,8 @@
   @include tablet {
     width: min(100% - 64px, $content-width);
   }
+
+  @include desktop {
+    width: min(100% - 220px, 1060px);
+  }
 }
