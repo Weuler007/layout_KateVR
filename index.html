@@ -33,6 +33,7 @@
         <button
           class="header__language"
           type="button"
+          data-modal-open="language"
         >
           En
         </button>
@@ -77,6 +78,27 @@
           >
             Contact
           </a>
+          <button
+            class="nav__link nav__link--mobile"
+            type="button"
+            data-modal-open="language"
+          >
+            Language
+          </button>
+          <button
+            class="nav__link nav__link--mobile"
+            type="button"
+            data-modal-open="faq"
+          >
+            FAQ
+          </button>
+          <button
+            class="nav__link nav__link--mobile"
+            type="button"
+            data-modal-open="help"
+          >
+            Help
+          </button>
         </nav>
 
         <div class="header__actions">
@@ -721,11 +743,88 @@
 
     <div
       class="modal"
+      data-modal="language"
+      aria-hidden="true"
+    >
+      <div class="modal__panel modal__panel--language">
+        <button
+          class="modal__back"
+          type="button"
+          aria-label="Close language selection"
+          data-modal-close
+        ></button>
+        <div class="modal__languages">
+          <button
+            class="modal__language modal__language--active"
+            type="button"
+          >
+            English
+          </button>
+          <button
+            class="modal__language"
+            type="button"
+          >
+            Arabic
+          </button>
+          <button
+            class="modal__language"
+            type="button"
+          >
+            Chinese (Simplified)
+          </button>
+          <button
+            class="modal__language"
+            type="button"
+          >
+            Chinese (Traditional)
+          </button>
+          <button
+            class="modal__language"
+            type="button"
+          >
+            French
+          </button>
+          <button
+            class="modal__language"
+            type="button"
+          >
+            German
+          </button>
+          <button
+            class="modal__language"
+            type="button"
+          >
+            Italian
+          </button>
+          <button
+            class="modal__language"
+            type="button"
+          >
+            Polish
+          </button>
+          <button
+            class="modal__language"
+            type="button"
+          >
+            Russian
+          </button>
+          <button
+            class="modal__language"
+            type="button"
+          >
+            Ukrainian
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal"
       data-modal="faq"
       aria-hidden="true"
     >
       <!-- FAQ content stays in the DOM so the modal opens instantly. -->
-      <div class="modal__panel">
+      <div class="modal__panel modal__panel--faq">
         <button
           class="modal__close"
           type="button"
