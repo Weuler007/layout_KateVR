@@ -15,7 +15,7 @@
 
   @include desktop {
     min-height: 740px;
-    padding: 0 0 84px;
+    padding: 0;
   }
 
   &__container {
@@ -32,7 +32,7 @@
       min-height: 740px;
       grid-template-columns: minmax(320px, 450px) minmax(500px, 1fr);
       grid-template-rows: 1fr auto;
-      align-items: center;
+      align-items: start;
       gap: 56px;
     }
   }
@@ -49,9 +49,10 @@
 
     @include desktop {
       grid-row: auto;
-      align-self: center;
+      align-self: start;
       text-align: left;
-      transform: translateY(42px);
+      padding-top: 166px;
+      transform: none;
     }
   }
 
@@ -141,7 +142,9 @@
     }
 
     @include desktop {
+      align-self: start;
       width: min(100%, 700px);
+      margin-top: 214px;
     }
   }
 
@@ -153,6 +156,7 @@
       display: grid;
       grid-template-columns: 1fr auto 1fr;
       align-items: end;
+      padding-bottom: 84px;
     }
   }
 
